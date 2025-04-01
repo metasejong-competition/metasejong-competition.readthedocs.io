@@ -33,18 +33,6 @@ exclude_patterns = []
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
-# ReadTheDocs 출력 디렉토리 설정
-import os
-if os.environ.get('READTHEDOCS') == 'True':
-    html_dir = os.environ.get('READTHEDOCS_OUTPUT', 'html')
-    html_build_dir = os.path.join('..', html_dir)
-    if not os.path.exists(html_build_dir):
-        os.makedirs(html_build_dir)
-    html_dir = html_build_dir
-    outdir = html_build_dir
-    builder_dir = html_build_dir
-    html_output_dir = html_build_dir
-
 # HTML 테마 설정
 html_theme_options = {
     'style_nav_header_background': '#2980B9',
