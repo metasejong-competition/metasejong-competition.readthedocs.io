@@ -13,7 +13,7 @@ sphinx:
 python:
   install:
     - method: pip
-      path: docs/requirements.txt
+      path: requirements.txt
 
 # Build documentation in all languages
 formats:
