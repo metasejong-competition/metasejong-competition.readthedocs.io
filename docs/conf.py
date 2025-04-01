@@ -43,6 +43,7 @@ if os.environ.get('READTHEDOCS') == 'True':
     html_dir = html_build_dir
     outdir = html_build_dir
     builder_dir = html_build_dir
+    html_output_dir = html_build_dir
 
 # 다국어 설정
 language = 'en'
