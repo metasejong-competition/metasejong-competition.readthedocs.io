@@ -90,6 +90,13 @@ latex_elements = {
     \usepackage{kotex}
     \usepackage{setspace}
     \setstretch{1.2}
+    \setlength{\headheight}{15pt}
+    \setlength{\headsep}{0.5in}
+    \setlength{\textheight}{8.5in}
+    \setlength{\textwidth}{6.5in}
+    \setlength{\topmargin}{0in}
+    \setlength{\oddsidemargin}{0in}
+    \setlength{\evensidemargin}{0in}
     ''',
     'papersize': 'a4paper',
     'pointsize': '11pt',
