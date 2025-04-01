@@ -214,6 +214,6 @@ myst_enable_checkboxes = True
 import os
 if os.environ.get('READTHEDOCS', '') == 'True':
     html_baseurl = os.environ.get('READTHEDOCS_URL', '')
-    html_output_path = os.environ.get('READTHEDOCS_OUTPUT', '')
+    html_output_path = os.environ.get('READTHEDOCS_OUTPUT', '_build/html')
     if not os.path.exists(html_output_path):
         os.makedirs(html_output_path) 
