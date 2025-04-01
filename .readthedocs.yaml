@@ -19,13 +19,9 @@ sphinx:
 python:
   install:
     - method: pip
-      path: .
-    - method: pip
       path: docs/requirements.txt
 
 # Build documentation in all languages
 formats:
   - htmlzip
   - pdf
-  - epub
-
