@@ -11,9 +11,6 @@ build:
       - cd docs && sphinx-build -b gettext . ../_build/gettext
       - sphinx-intl update -p _build/gettext -l ko
 
-checkout:
-  path: guide
-
 sphinx:
   configuration: docs/conf.py
   fail_on_warning: false
