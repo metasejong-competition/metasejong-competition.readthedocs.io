@@ -64,6 +64,7 @@ myst_enable_extensions = [
 # LaTeX 설정
 latex_elements = {
     'preamble': r'''
+    \usepackage{kotex}
     \usepackage{setspace}
     \setstretch{1.2}
     \setlength{\headheight}{15pt}
@@ -80,6 +81,7 @@ latex_elements = {
     'fontpkg': r'''
     \usepackage[T1]{fontenc}
     \usepackage{times}
+    \usepackage[utf8]{inputenc}
     ''',
     'sphinxsetup': 'verbatimwithframe=false',
     'extraclassoptions': 'openany,oneside'
