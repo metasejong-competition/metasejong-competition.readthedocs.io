@@ -45,18 +45,7 @@ if os.environ.get('READTHEDOCS') == 'True':
     builder_dir = html_build_dir
     html_output_dir = html_build_dir
 
-# 다국어 설정
-language = 'en'
-locale_dirs = ['locale/']
-gettext_compact = False
-gettext_uuid = True
-gettext_location = True
-gettext_additional_targets = ['literal-block', 'image']
-
-# 지원하는 언어 목록
-languages = ['en', 'ko']
-
-# 다국어 지원을 위한 설정
+# HTML 테마 설정
 html_theme_options = {
     'style_nav_header_background': '#2980B9',
     'navigation_depth': 4,
@@ -87,7 +76,6 @@ myst_enable_extensions = [
 # LaTeX 설정
 latex_elements = {
     'preamble': r'''
-    \usepackage{kotex}
     \usepackage{setspace}
     \setstretch{1.2}
     \setlength{\headheight}{15pt}
