@@ -41,6 +41,7 @@ if os.environ.get('READTHEDOCS') == 'True':
     if not os.path.exists(html_build_dir):
         os.makedirs(html_build_dir)
     html_dir = html_build_dir
+    outdir = html_build_dir
 
 # 다국어 설정
 language = 'en'
