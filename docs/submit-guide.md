@@ -1,36 +1,69 @@
 # Submission Guide
 
-## How to Submit
+## Submission Process
 
-1. Clone the GitHub repository:
-```bash
-git clone https://github.com/your-username/metasejong-competition.git
+1. Prepare your submission
+2. Test your code locally
+3. Submit through the competition platform
+
+## Submission Requirements
+
+### Code Requirements
+
+- All code must be in Python
+- Follow PEP 8 style guide
+- Include proper documentation
+- Pass all tests
+
+### File Structure
+
+Your submission should include:
+
+```
+submission/
+├── src/
+│   └── your_solution.py
+├── requirements.txt
+├── README.md
+└── tests/
+    └── test_solution.py
 ```
 
-2. Create and activate a virtual environment:
+### Documentation
+
+Your README.md should include:
+
+- Project description
+- Installation instructions
+- Usage examples
+- Dependencies
+
+## Testing Before Submission
+
+1. Run the test suite:
 ```bash
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# or
-.\venv\Scripts\activate  # Windows
+python -m pytest tests/
 ```
 
-3. Install required packages:
+2. Check code style:
 ```bash
-pip install -r requirements.txt
+flake8 src/
 ```
 
-4. Create and submit your application:
-   - Create a new folder with your team name in the `submissions` directory
-   - Write team information and access instructions in the `README.md` file
-   - Create a Pull Request to submit
+3. Verify documentation:
+```bash
+sphinx-build -b html docs/ _build/html
+```
 
-## Submission Guidelines
+## Submission Deadline
 
-- Only one Pull Request per team is allowed
-- Submission deadline is May 30, 2025
-- Submitted code will be released under the MIT License
+- Regular submission: TBD
+- Late submission: TBD
 
-## Contact
+## Evaluation Criteria
 
-If you have any questions about the submission process, please contact the competition organizers. 
+- Code quality
+- Documentation
+- Test coverage
+- Performance
+- Innovation 

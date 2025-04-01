@@ -1,52 +1,39 @@
-# Getting Started
+# Getting Started Guide
 
-This guide will help you get started with the META-SEJONG AI Robotics Challenge.
+## Introduction
+
+Welcome to the MetaSejong Competition! This guide will help you get started with the competition.
 
 ## Prerequisites
 
-Before you begin, make sure you have the following prerequisites installed:
+Before you begin, make sure you have:
 
-- Python 3.10 or higher
-- ROS2 Humble or higher
-- Git
+- Python 3.10 or higher installed
+- Git installed
+- Basic understanding of Python programming
+- Familiarity with ROS2
 
 ## Installation
 
-1. Clone the repository:
+1. Clone the competition repository:
 ```bash
-git clone https://github.com/metasejong-competition/metacom2025.git
-cd metacom2025
+git clone https://github.com/your-username/metasejong-competition.git
+cd metasejong-competition
 ```
 
 2. Create and activate a virtual environment:
 ```bash
-python3 -m venv venv
+python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. Install dependencies:
+3. Install required packages:
 ```bash
 pip install -r requirements.txt
 ```
 
-## Project Structure
-
-The project is organized as follows:
-
-```
-metacom2025/
-├── guide/              # Documentation
-├── src/               # Source code
-├── tests/             # Test files
-└── requirements.txt   # Python dependencies
-```
-
 ## Next Steps
 
-1. Read the [Competition Rules](rules.md) to understand the challenge requirements
-2. Follow the [Technical Guide](technical-guide.md) for implementation details
-3. Check the [API Reference](api-reference.md) for detailed information about available functions and classes
-
-## Support
-
-If you encounter any issues or have questions, please refer to the [FAQ](faq.md) or contact the competition organizers. 
+- Read the [Technical Guide](technical-guide.md) for detailed technical information
+- Review the [Competition Rules](rules.md)
+- Check the [Submission Guide](submit-guide.md) for submission instructions 

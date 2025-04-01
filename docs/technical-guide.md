@@ -1,62 +1,65 @@
 # Technical Guide
 
-## Environment Setup
+## Overview
 
-### System Requirements
-- NVIDIA GPU (minimum 8GB VRAM)
-- 16GB RAM
-- 50GB disk space
-- Ubuntu 20.04 LTS or Windows 10
+This guide provides detailed technical information about the MetaSejong Competition.
 
-### Virtual Environment
-- Isaac Sim based
+## System Architecture
+
+The competition system consists of the following components:
+
+- ROS2 nodes for robot control
+- Python-based evaluation system
+- Simulation environment
+
+## Development Environment
+
+### Required Software
+
 - ROS2 Humble
-- Python 3.9+
+- Python 3.10+
+- Git
+- Docker (optional)
 
-## Robot Specifications
+### Development Tools
 
-### Hardware
-- Mobile base
-- Robot arm
-- RGB-D camera
-- Various sensors
+- VS Code with Python extension
+- ROS2 development tools
+- Git for version control
 
-### Software Interface
-- ROS2-based communication
-- Python API provided
+## Code Structure
 
-## Mission Stages
+```
+metasejong-competition/
+├── src/
+│   ├── robot_control/
+│   ├── evaluation/
+│   └── utils/
+├── tests/
+├── docs/
+└── config/
+```
 
-### Stage 1: Object Recognition
-- Input: RGB-D image
-- Output: Object location and type
+## Testing
 
-### Stage 2: Path Planning
-- Input: Start point, goal point, obstacle information
-- Output: Collision-free path
+To run the tests:
 
-### Stage 3: Pick and Place
-- Input: Object information, target location
-- Output: Robot action sequence
+```bash
+python -m pytest tests/
+```
 
-## Troubleshooting {#troubleshooting}
+## Troubleshooting
 
-### Common Issues
-1. Environment Setup Errors
-   - Check CUDA version
-   - Verify ROS2 dependencies
-   - Check Python package versions
+Common issues and their solutions:
 
-2. Runtime Errors
-   - GPU memory shortage
-   - Port conflicts
-   - Permission issues
+1. ROS2 node not starting
+   - Check ROS2 installation
+   - Verify environment variables
 
-3. Performance Issues
-   - Computation speed optimization
-   - Memory usage management
-   - Bottleneck resolution
+2. Python package import errors
+   - Ensure virtual environment is activated
+   - Check package installation
 
-## Support
-
-If you encounter any issues, please contact the competition organizers or create a GitHub issue. 
+3. Simulation issues
+   - Verify system requirements
+   - Check graphics drivers 

@@ -1,62 +1,65 @@
-# 기술 가이드
+# Technical Guide
 
-## 환경 설정
+## Overview
 
-### 시스템 요구사항
-- NVIDIA GPU (최소 8GB VRAM)
-- 16GB RAM
-- 50GB 디스크 공간
-- Ubuntu 20.04 LTS 또는 Windows 10
+This guide provides detailed technical information about the MetaSejong Competition.
 
-### 가상 환경
-- Isaac Sim 기반
+## System Architecture
+
+The competition system consists of the following components:
+
+- ROS2 nodes for robot control
+- Python-based evaluation system
+- Simulation environment
+
+## Development Environment
+
+### Required Software
+
 - ROS2 Humble
-- Python 3.9+
+- Python 3.10+
+- Git
+- Docker (optional)
 
-## 로봇 사양
+### Development Tools
 
-### 하드웨어
-- 모바일 베이스
-- 로봇 팔
-- RGB-D 카메라
-- 다양한 센서
+- VS Code with Python extension
+- ROS2 development tools
+- Git for version control
 
-### 소프트웨어 인터페이스
-- ROS2 기반 통신
-- Python API 제공
+## Code Structure
 
-## 미션 단계
+```
+metasejong-competition/
+├── src/
+│   ├── robot_control/
+│   ├── evaluation/
+│   └── utils/
+├── tests/
+├── docs/
+└── config/
+```
 
-### Stage 1: 객체 인식
-- 입력: RGB-D 이미지
-- 출력: 객체 위치와 종류
+## Testing
 
-### Stage 2: 경로 계획
-- 입력: 시작점, 목표점, 장애물 정보
-- 출력: 충돌 없는 경로
+To run the tests:
 
-### Stage 3: Pick and Place
-- 입력: 객체 정보, 목표 위치
-- 출력: 로봇 동작 시퀀스
+```bash
+python -m pytest tests/
+```
 
-## 문제 해결 {#troubleshooting}
+## Troubleshooting
 
-### 일반적인 문제
-1. 환경 설정 오류
-   - CUDA 버전 확인
-   - ROS2 의존성 검사
-   - Python 패키지 버전 확인
+Common issues and their solutions:
 
-2. 실행 시 오류
-   - GPU 메모리 부족
-   - 포트 충돌
-   - 권한 문제
+1. ROS2 node not starting
+   - Check ROS2 installation
+   - Verify environment variables
 
-3. 성능 문제
-   - 연산 속도 최적화
-   - 메모리 사용량 관리
-   - 병목 현상 해결
+2. Python package import errors
+   - Ensure virtual environment is activated
+   - Check package installation
 
-## 지원
-
-문제가 발생하면 대회 운영진에게 연락하거나 GitHub 이슈를 생성해 주세요. 
+3. Simulation issues
+   - Verify system requirements
+   - Check graphics drivers 

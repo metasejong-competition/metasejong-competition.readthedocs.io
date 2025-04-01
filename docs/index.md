@@ -1,32 +1,27 @@
-# META-SEJONG AI Robotics Challenge Guide
+# MetaSejong Competition
 
-## Table of Contents
+Welcome to the MetaSejong Competition documentation.
 
 ```{toctree}
 :maxdepth: 2
-:caption: Contents:
+:caption: Contents
 
 getting-started
-rules
 technical-guide
-api-reference
 submit-guide
+rules
+api-reference
 faq
 ```
 
-## Introduction
-
-Welcome to the META-SEJONG AI Robotics Challenge. This guide provides all the necessary information for participating in the competition.
-
 ## Getting Started
 
-- [Getting Started](getting-started.md) - Basic setup instructions for competition participation
-- [Competition Rules](rules.md) - Competition rules and evaluation criteria
-- [Technical Guide](technical-guide.md) - Technical details and implementation methods
-- [API Reference](api-reference.md) - Available APIs and usage instructions
-- [Submission Guide](submit-guide.md) - How to submit your results
-- [FAQ](faq.md) - Frequently Asked Questions
+- [Getting Started Guide](getting-started.md)
+- [Technical Guide](technical-guide.md)
+- [Submission Guide](submit-guide.md)
 
-## Support
+## Competition Rules
 
-If you have any additional questions or need assistance, please contact the competition organizers. 
+- [Competition Rules](rules.md)
+- [API Reference](api-reference.md)
+- [FAQ](faq.md) 

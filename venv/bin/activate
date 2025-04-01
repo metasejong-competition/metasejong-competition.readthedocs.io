@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/thyun/git/sejong/metasejong-competition.github.io/guide/venv"
+VIRTUAL_ENV="/Users/thyun/git/sejong/metasejong-competition.readthedocs.io/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
