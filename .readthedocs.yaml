@@ -15,7 +15,6 @@ sphinx:
   configuration: docs/conf.py
   fail_on_warning: false
   builder: html
-  output_dir: $READTHEDOCS_OUTPUT/html
 
 python:
   install:
