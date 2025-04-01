@@ -78,16 +78,21 @@ latex_elements = {
     \usepackage{kotex}
     \usepackage{setspace}
     \setstretch{1.2}
-    \usepackage{fontspec}
-    \setmainfont{NanumGothic}
     ''',
     'papersize': 'a4paper',
     'pointsize': '11pt',
     'figure_align': 'htbp',
-    'fontpkg': '',
+    'fontpkg': r'''
+    \usepackage[T1]{fontenc}
+    \usepackage{times}
+    ''',
+    'sphinxsetup': 'verbatimwithframe=false',
+    'extraclassoptions': 'openany,oneside'
 }
 
 latex_documents = [
     (master_doc, 'metasejong-competition.tex', project,
      author, 'manual'),
-] 
+]
+
+latex_engine = 'pdflatex' 
