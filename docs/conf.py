@@ -10,6 +10,9 @@ project = 'META-SEJONG AI Robotics Challenge'
 copyright = '2025, META-SEJONG AI Robotics Challenge'
 author = 'META-SEJONG AI Robotics Challenge'
 
+# The master toctree document
+master_doc = 'index'
+
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
@@ -67,4 +70,24 @@ myst_enable_extensions = [
     "smartquotes",
     "substitution",
     "tasklist",
+]
+
+# LaTeX 설정
+latex_elements = {
+    'preamble': r'''
+    \usepackage{kotex}
+    \usepackage{setspace}
+    \setstretch{1.2}
+    \usepackage{fontspec}
+    \setmainfont{NanumGothic}
+    ''',
+    'papersize': 'a4paper',
+    'pointsize': '11pt',
+    'figure_align': 'htbp',
+    'fontpkg': '',
+}
+
+latex_documents = [
+    (master_doc, 'metasejong-competition.tex', project,
+     author, 'manual'),
 ] 
