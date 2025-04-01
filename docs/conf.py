@@ -208,4 +208,12 @@ myst_url_schemes = ['http', 'https', 'mailto', 'ftp']
 myst_heading_anchors = 3
 myst_footnote_transition = True
 myst_dmath_double_inline = True
-myst_enable_checkboxes = True 
+myst_enable_checkboxes = True
+
+# ReadTheDocs 환경 변수 설정
+import os
+if os.environ.get('READTHEDOCS', '') == 'True':
+    html_baseurl = os.environ.get('READTHEDOCS_URL', '')
+    html_output_path = os.environ.get('READTHEDOCS_OUTPUT', '')
+    if not os.path.exists(html_output_path):
+        os.makedirs(html_output_path) 

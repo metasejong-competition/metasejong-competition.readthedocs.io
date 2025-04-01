@@ -9,8 +9,6 @@ sphinx:
   configuration: docs/conf.py
   fail_on_warning: true
   builder: html
-  jobs: 2
-  verbose: 1
 
 python:
   install:
