@@ -29,10 +29,3 @@ formats:
   - pdf
   - epub
 
-latex:
-  latexmk:
-    - "-pdf"
-    - "-interaction=nonstopmode"
-    - "-file-line-error"
-    - "-outdir=_build/latex"
-    - "-cd"
