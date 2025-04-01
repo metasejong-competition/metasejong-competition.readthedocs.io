@@ -1,62 +1,62 @@
-# 기술 가이드
+# Technical Guide
 
-## 환경 설정
+## Environment Setup
 
-### 시스템 요구사항
-- NVIDIA GPU (최소 8GB VRAM)
+### System Requirements
+- NVIDIA GPU (minimum 8GB VRAM)
 - 16GB RAM
-- 50GB 디스크 공간
-- Ubuntu 20.04 LTS 또는 Windows 10
+- 50GB disk space
+- Ubuntu 20.04 LTS or Windows 10
 
-### 가상 환경
-- Isaac Sim 기반
+### Virtual Environment
+- Isaac Sim based
 - ROS2 Humble
 - Python 3.9+
 
-## 로봇 사양
+## Robot Specifications
 
-### 하드웨어
-- 모바일 베이스
-- 로봇 팔
-- RGB-D 카메라
-- 다양한 센서
+### Hardware
+- Mobile base
+- Robot arm
+- RGB-D camera
+- Various sensors
 
-### 소프트웨어 인터페이스
-- ROS2 기반 통신
-- Python API 제공
+### Software Interface
+- ROS2-based communication
+- Python API provided
 
-## 미션 단계
+## Mission Stages
 
-### Stage 1: 객체 인식
-- 입력: RGB-D 이미지
-- 출력: 객체 위치와 종류
+### Stage 1: Object Recognition
+- Input: RGB-D image
+- Output: Object location and type
 
-### Stage 2: 경로 계획
-- 입력: 시작점, 목표점, 장애물 정보
-- 출력: 충돌 없는 경로
+### Stage 2: Path Planning
+- Input: Start point, goal point, obstacle information
+- Output: Collision-free path
 
 ### Stage 3: Pick and Place
-- 입력: 객체 정보, 목표 위치
-- 출력: 로봇 동작 시퀀스
+- Input: Object information, target location
+- Output: Robot action sequence
 
-## 문제 해결 {#troubleshooting}
+## Troubleshooting {#troubleshooting}
 
-### 일반적인 문제
-1. 환경 설정 오류
-   - CUDA 버전 확인
-   - ROS2 의존성 검사
-   - Python 패키지 버전 확인
+### Common Issues
+1. Environment Setup Errors
+   - Check CUDA version
+   - Verify ROS2 dependencies
+   - Check Python package versions
 
-2. 실행 시 오류
-   - GPU 메모리 부족
-   - 포트 충돌
-   - 권한 문제
+2. Runtime Errors
+   - GPU memory shortage
+   - Port conflicts
+   - Permission issues
 
-3. 성능 문제
-   - 연산 속도 최적화
-   - 메모리 사용량 관리
-   - 병목 현상 해결
+3. Performance Issues
+   - Computation speed optimization
+   - Memory usage management
+   - Bottleneck resolution
 
-## 지원
+## Support
 
-문제가 발생하면 대회 운영진에게 연락하거나 GitHub 이슈를 생성해 주세요. 
+If you encounter any issues, please contact the competition organizers or create a GitHub issue. 
