@@ -58,10 +58,14 @@ A: You can:
 - Use the provided issue tracker
 
 ### Q: What should I do if I encounter technical issues?
-A: 
-1. Check the [Troubleshooting](technical-guide.md#troubleshooting) section
-2. Review the error logs
-3. Contact the competition organizers with detailed information about the issue
+A: 코드 실행 문제는 여러 가지 원인이 있을 수 있습니다. 다음 사항들을 확인해보세요:
+
+1. 필요한 패키지가 모두 설치되어 있는지 확인
+2. 코드의 의존성 관계가 올바르게 설정되어 있는지 확인
+3. 환경 변수와 경로가 올바르게 설정되어 있는지 확인
+4. 코드의 문법 오류나 런타임 오류가 없는지 확인
+
+문제가 지속되면 [제출 가이드](submit-guide.md)를 참고하여 제출 방법을 다시 한 번 확인해보세요.
 
 ## Awards and Recognition
 
