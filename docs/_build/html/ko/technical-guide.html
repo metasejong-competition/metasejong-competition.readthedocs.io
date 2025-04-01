@@ -1,0 +1,234 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ko" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>기술 가이드 &mdash; META-SEJONG AI Robotics Challenge  문서</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8e72191d"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=e33e7ba0"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="색인" href="genindex.html" />
+    <link rel="search" title="검색" href="search.html" />
+    <link rel="next" title="API Reference" href="api-reference.html" />
+    <link rel="prev" title="Competition Rules" href="rules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            META-SEJONG AI Robotics Challenge
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rules.html">Competition Rules</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">기술 가이드</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">환경 설정</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">시스템 요구사항</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">가상 환경</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">로봇 사양</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">하드웨어</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">소프트웨어 인터페이스</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">미션 단계</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#stage-1">Stage 1: 객체 인식</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stage-2">Stage 2: 경로 계획</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stage-3-pick-and-place">Stage 3: Pick and Place</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">문제 해결 {#troubleshooting}</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">일반적인 문제</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">지원</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api-reference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submit-guide.html">결과물의 제출</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions (FAQ)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">META-SEJONG AI Robotics Challenge</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">기술 가이드</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/technical-guide.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>기술 가이드<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<section id="id2">
+<h2>환경 설정<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<section id="id3">
+<h3>시스템 요구사항<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>NVIDIA GPU (최소 8GB VRAM)</p></li>
+<li><p>16GB RAM</p></li>
+<li><p>50GB 디스크 공간</p></li>
+<li><p>Ubuntu 20.04 LTS 또는 Windows 10</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>가상 환경<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Isaac Sim 기반</p></li>
+<li><p>ROS2 Humble</p></li>
+<li><p>Python 3.9+</p></li>
+</ul>
+</section>
+</section>
+<section id="id5">
+<h2>로봇 사양<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<section id="id6">
+<h3>하드웨어<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>모바일 베이스</p></li>
+<li><p>로봇 팔</p></li>
+<li><p>RGB-D 카메라</p></li>
+<li><p>다양한 센서</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>소프트웨어 인터페이스<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>ROS2 기반 통신</p></li>
+<li><p>Python API 제공</p></li>
+</ul>
+</section>
+</section>
+<section id="id8">
+<h2>미션 단계<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<section id="stage-1">
+<h3>Stage 1: 객체 인식<a class="headerlink" href="#stage-1" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>입력: RGB-D 이미지</p></li>
+<li><p>출력: 객체 위치와 종류</p></li>
+</ul>
+</section>
+<section id="stage-2">
+<h3>Stage 2: 경로 계획<a class="headerlink" href="#stage-2" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>입력: 시작점, 목표점, 장애물 정보</p></li>
+<li><p>출력: 충돌 없는 경로</p></li>
+</ul>
+</section>
+<section id="stage-3-pick-and-place">
+<h3>Stage 3: Pick and Place<a class="headerlink" href="#stage-3-pick-and-place" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>입력: 객체 정보, 목표 위치</p></li>
+<li><p>출력: 로봇 동작 시퀀스</p></li>
+</ul>
+</section>
+</section>
+<section id="troubleshooting">
+<h2>문제 해결 {#troubleshooting}<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<section id="id9">
+<h3>일반적인 문제<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>환경 설정 오류</p>
+<ul class="simple">
+<li><p>CUDA 버전 확인</p></li>
+<li><p>ROS2 의존성 검사</p></li>
+<li><p>Python 패키지 버전 확인</p></li>
+</ul>
+</li>
+<li><p>실행 시 오류</p>
+<ul class="simple">
+<li><p>GPU 메모리 부족</p></li>
+<li><p>포트 충돌</p></li>
+<li><p>권한 문제</p></li>
+</ul>
+</li>
+<li><p>성능 문제</p>
+<ul class="simple">
+<li><p>연산 속도 최적화</p></li>
+<li><p>메모리 사용량 관리</p></li>
+<li><p>병목 현상 해결</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="id10">
+<h2>지원<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<p>문제가 발생하면 대회 운영진에게 연락하거나 GitHub 이슈를 생성해 주세요.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="rules.html" class="btn btn-neutral float-left" title="Competition Rules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api-reference.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, META-SEJONG AI Robotics Challenge.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ko" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>META-SEJONG AI Robotics Challenge 가이드 &mdash; META-SEJONG AI Robotics Challenge  문서</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8e72191d"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=e33e7ba0"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="색인" href="genindex.html" />
+    <link rel="search" title="검색" href="search.html" />
+    <link rel="next" title="Getting Started" href="getting-started.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            META-SEJONG AI Robotics Challenge
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rules.html">Competition Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical-guide.html">기술 가이드</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-reference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submit-guide.html">결과물의 제출</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions (FAQ)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">META-SEJONG AI Robotics Challenge</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">META-SEJONG AI Robotics Challenge 가이드</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="meta-sejong-ai-robotics-challenge">
+<h1>META-SEJONG AI Robotics Challenge 가이드<a class="headerlink" href="#meta-sejong-ai-robotics-challenge" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2>목차<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#project-structure">Project Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#next-steps">Next Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#support">Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rules.html">Competition Rules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rules.html#general-rules">General Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rules.html#technical-requirements">Technical Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rules.html#evaluation-criteria">Evaluation Criteria</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rules.html#awards">Awards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rules.html#disqualification">Disqualification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rules.html#contact">Contact</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="technical-guide.html">기술 가이드</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="technical-guide.html#id2">환경 설정</a></li>
+<li class="toctree-l2"><a class="reference internal" href="technical-guide.html#id5">로봇 사양</a></li>
+<li class="toctree-l2"><a class="reference internal" href="technical-guide.html#id8">미션 단계</a></li>
+<li class="toctree-l2"><a class="reference internal" href="technical-guide.html#troubleshooting">문제 해결 {#troubleshooting}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="technical-guide.html#id10">지원</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api-reference.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api-reference.html#ros2-topics">ROS2 Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-reference.html#ros2-services">ROS2 Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-reference.html#python-api">Python API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-reference.html#data-structures">Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-reference.html#error-handling">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-reference.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-reference.html#support">Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="submit-guide.html">결과물의 제출</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="submit-guide.html#id2">참가 신청 방법</a></li>
+<li class="toctree-l2"><a class="reference internal" href="submit-guide.html#id3">제출 가이드라인</a></li>
+<li class="toctree-l2"><a class="reference internal" href="submit-guide.html#id4">문의</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions (FAQ)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#general-questions">General Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#technical-questions">Technical Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#competition-rules">Competition Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#support">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#awards-and-recognition">Awards and Recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#additional-questions">Additional Questions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="id2">
+<h2>소개<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>META-SEJONG AI Robotics Challenge에 오신 것을 환영합니다. 이 가이드는 대회 참가를 위한 모든 필요한 정보를 제공합니다.</p>
+</section>
+<section id="id3">
+<h2>시작하기<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="getting-started.html"><span class="std std-doc">시작하기</span></a> - 대회 참가를 위한 기본 설정 방법</p></li>
+<li><p><a class="reference internal" href="rules.html"><span class="std std-doc">대회 규칙</span></a> - 대회 규칙 및 평가 기준</p></li>
+<li><p><a class="reference internal" href="technical-guide.html"><span class="std std-doc">기술 가이드</span></a> - 기술적 세부사항 및 구현 방법</p></li>
+<li><p><a class="reference internal" href="api-reference.html"><span class="std std-doc">API 참조</span></a> - 사용 가능한 API 및 사용법</p></li>
+<li><p><a class="reference internal" href="submit-guide.html"><span class="std std-doc">제출 가이드</span></a> - 결과물 제출 방법</p></li>
+<li><p><a class="reference internal" href="faq.html"><span class="std std-doc">FAQ</span></a> - 자주 묻는 질문</p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>지원<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>추가적인 질문이나 도움이 필요하시다면 대회 운영진에게 연락해 주세요.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="getting-started.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, META-SEJONG AI Robotics Challenge.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
