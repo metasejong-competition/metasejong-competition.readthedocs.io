@@ -15,5 +15,5 @@ sphinx:
   builder: html
 
 formats:
-  - pdf
-  - epub 
+  # - pdf
+  # - epub 
