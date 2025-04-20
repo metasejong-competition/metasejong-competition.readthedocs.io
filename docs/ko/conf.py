@@ -1,24 +1,17 @@
 import os
 import sys
-sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('..'))
 
 project = 'MetaSejong Competition'
 copyright = '2024, MetaSejong'
 author = 'MetaSejong'
 release = '1.0.0'
 
-# Build only English documents
+# 한글 문서 설정
+language = 'ko'
 source_suffix = {
     '.md': 'markdown',
 }
-
-# Exclude patterns
-exclude_patterns = [
-    '_build', 
-    'Thumbs.db', 
-    '.DS_Store',
-    'ko/**',  # Exclude Korean documents
-]
 
 extensions = [
     'sphinx.ext.autodoc',
@@ -31,6 +24,7 @@ extensions = [
 ]
 
 templates_path = ['_templates']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
@@ -59,11 +53,4 @@ myst_enable_extensions = [
     'html_admonition',
 ]
 myst_dmath_double_inline = True
-myst_enable_checkboxes = True
-
-# ReadTheDocs 환경 변수 설정
-if os.environ.get('READTHEDOCS', '') == 'True':
-    html_baseurl = os.environ.get('READTHEDOCS_URL', '')
-    html_output_path = os.environ.get('READTHEDOCS_OUTPUT', '')
-    if not os.path.exists(html_output_path):
-        os.makedirs(html_output_path) 
+myst_enable_checkboxes = True 

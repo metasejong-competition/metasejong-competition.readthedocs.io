@@ -1,8 +1,10 @@
 # MetaSejong Competition
 
-Welcome to the META-SEJONG AI Robotics Challenge 2025! This event is a sub-event of IEEE MetaCom 2025 and corresponds to the MetaCom 2025 Student Challenge Programs.
+Welcome to the META-SEJONG AI Robotics Challenge 2025! 
 
-This guide provides guidelines for students participating in the challenge. Follow the guide to take on the challenge.
+challenge에 참여하는 학생들을 위한 가이드라인을 제공합니다. 가이드에 따라 도전해보세요.
+
+
 
 ```{toctree}
 :maxdepth: 2
@@ -26,4 +28,4 @@ faq
 
 - [Competition Rules](rules.md)
 - [API Reference](api-reference.md)
-- [FAQ](faq.md)
+- [FAQ](faq.md) 

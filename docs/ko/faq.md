@@ -38,4 +38,4 @@ A: Your submission should include:
 - Requirements file
 
 ### Q: Can I submit multiple times?
-A: Yes, you can submit multiple times before the deadline. Only your last submission will be evaluated.
+A: Yes, you can submit multiple times before the deadline. Only your last submission will be evaluated. 

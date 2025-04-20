@@ -62,4 +62,4 @@ Common issues and their solutions:
 
 3. Simulation issues
    - Verify system requirements
-   - Check graphics drivers
+   - Check graphics drivers 
