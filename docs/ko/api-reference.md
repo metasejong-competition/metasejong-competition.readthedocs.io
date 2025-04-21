@@ -1,413 +1,282 @@
-# API 참조 문서
+# API 참조
 
 ## 개요
 
-본 문서는 MetaSejong AI Robotics Challenge 2025에서 사용되는 ROS2 인터페이스에 대한 상세한 설명을 제공합니다. 대회 참가자들은 이 문서를 통해 플랫폼과의 통신 방법을 이해하고, 필요한 기능을 구현할 수 있습니다.
+이 문서는 MetaSejong 플랫폼에서 제공하는 ROS2 인터페이스에 대한 상세한 설명을 제공합니다. 참가자는 이 문서를 통해 플랫폼과의 통신 방법을 이해하고 구현할 수 있습니다.
 
 ## ROS2 토픽 목록
 
-다음은 MetaSejong 플랫폼에서 제공하는 모든 ROS2 토픽의 목록입니다:
+다음은 MetaSejong 플랫폼에서 제공하는 모든 ROS2 토픽 목록입니다:
 
-| 토픽 이름 | 메시지 타입 | 발행 → 구독 | 설명 |
+| 토픽 이름 | 메시지 타입 | 발행/구독 | 설명 |
 |----------|------------|----------|------|
-| **경진대회 프로토콜** |  |  | 
-| `/metasejong2025/competitor_request` | std_msgs/msg/String (JSON) | 참가자 → 플랫폼 | 참가자가 플랫폼에 전송하는 요청 메시지 |
-| `/metasejong2025/competitor_response` | std_msgs/msg/String (JSON) | 플랫폼 → 참가자 | 플랫폼이 참가자의 요청에 대해 전송하는 응답 메시지 |
-| `/metasejong2025/competitor_notification` | std_msgs/msg/String (JSON) | 플랫폼 → 참가자 | 플랫폼이 참가자에게 전송하는 통지 메시지 |
-|  **센서 데이터** |  |  | 
-| `/metasejong2025/cameras/<field_name>/image_raw` | sensor_msgs/Image | 플랫폼 → 참가자 | 고정 카메라에서 촬영한 RGB 이미지 |
-| `/metasejong2025/cameras/<field_name>/camera_info` | sensor_msgs/msg/CameraInfo | 플랫폼 → 참가자 | 고정 카메라의 내부/외부 파라미터 정보 |
-| `/metasejong2025/robot_camera/camera_info` | sensor_msgs/msg/CameraInfo | 플랫폼 → 참가자 | 로봇 카메라의 내부/외부 파라미터 정보 |
-| `/metasejong2025/robot_camera/color` | sensor_msgs/msg/Image | 플랫폼 → 참가자 | 로봇 카메라에서 촬영한 RGB 이미지 |
-| `/metasejong2025/robot_camera/depth` | sensor_msgs/msg/Image | 플랫폼 → 참가자 | 로봇 카메라에서 촬영한 깊이 이미지 |
-| `/metasejong2025/scan` | sensor_msgs/msg/LaserScan | 플랫폼 → 참가자 | 라이다 센서에서 측정한 스캔 데이터 |
-|  **로봇 상태, 네비게이션 및 제어** |  |  | 
-| `/metasejong2025/odom` | nav_msgs/Odometry | 플랫폼 → 참가자 | 로봇의 현재 위치 및 방향 정보 |
-| `/metasejong2025/tf` | tf2_msgs/TFMessage | 플랫폼 → 참가자 | 좌표계 간 변환 정보 |
-| `/metasejong2025/cmd_vel` | geometry_msgs/Twist | 참가자 → 플랫폼 | 로봇의 이동 속도 제어 명령 |
-| `/metasejong2025/ppcmd` | std_msgs/msg/String | 참가자 → 플랫폼 | 로봇팔의 동작 제어 명령 |
+| /metasejong2025/camera/image_raw | sensor_msgs/Image | 발행 | RGB 카메라 이미지 |
+| /metasejong2025/camera/depth | sensor_msgs/Image | 발행 | 깊이 카메라 이미지 |
+| /metasejong2025/odom | nav_msgs/Odometry | 발행 | 로봇의 위치 및 자세 정보 |
+| /metasejong2025/tf | tf2_msgs/TFMessage | 발행 | 좌표계 변환 정보 |
+| /metasejong2025/cmd_vel | geometry_msgs/Twist | 구독 | 로봇 이동 명령 |
+| /metasejong2025/arm_control | metasejong_msgs/ArmControl | 구독 | 로봇 팔 제어 명령 |
+| /metasejong2025/object_info | metasejong_msgs/ObjectInfo | 발행 | 물체 정보 |
+| /metasejong2025/task_status | metasejong_msgs/TaskStatus | 발행 | 작업 상태 정보 |
+
+### 센서 데이터 토픽
+
+#### 카메라 데이터
+
+카메라 토픽은 다음과 같은 데이터 구조를 가집니다:
+
+```json
+{
+  "header": {
+    "stamp": {
+      "sec": 1234567890,
+      "nanosec": 123456789
+    },
+    "frame_id": "camera_link"
+  },
+  "height": 480,
+  "width": 640,
+  "encoding": "rgb8",
+  "is_bigendian": 0,
+  "step": 1920,
+  "data": [/* 이미지 데이터 */]
+}
+```
+
+#### 깊이 카메라 데이터
+
+깊이 카메라 토픽은 다음과 같은 데이터 구조를 가집니다:
+
+```json
+{
+  "header": {
+    "stamp": {
+      "sec": 1234567890,
+      "nanosec": 123456789
+    },
+    "frame_id": "depth_camera_link"
+  },
+  "height": 480,
+  "width": 640,
+  "encoding": "32FC1",
+  "is_bigendian": 0,
+  "step": 2560,
+  "data": [/* 깊이 데이터 */]
+}
+```
+
+### 로봇 상태 토픽
+
+#### 오도메트리 데이터
+
+오도메트리 토픽은 다음과 같은 데이터 구조를 가집니다:
+
+```json
+{
+  "header": {
+    "stamp": {
+      "sec": 1234567890,
+      "nanosec": 123456789
+    },
+    "frame_id": "odom"
+  },
+  "child_frame_id": "base_link",
+  "pose": {
+    "pose": {
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      }
+    },
+    "covariance": [/* 공분산 행렬 */]
+  },
+  "twist": {
+    "twist": {
+      "linear": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "angular": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "covariance": [/* 공분산 행렬 */]
+  }
+}
+```
+
+### 제어 명령 토픽
+
+#### 로봇 이동 명령
+
+로봇 이동 명령 토픽은 다음과 같은 데이터 구조를 가집니다:
+
+```json
+{
+  "linear": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "angular": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  }
+}
+```
+
+#### 로봇 팔 제어 명령
+
+로봇 팔 제어 명령 토픽은 다음과 같은 데이터 구조를 가집니다:
+
+```json
+{
+  "command": "grasp",
+  "target": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "parameters": {
+    "force": 10.0,
+    "speed": 0.5
+  }
+}
+```
 
 ## 경진대회 프로토콜
 
-### 1. 참가자 요청 메시지
-- **토픽**: `/metasejong2025/competitor_request`
-- **타입**: std_msgs/msg/String (JSON)
-- **설명**: 참가자가 플랫폼에 전송하는 요청 메시지
-- **기본 데이터 구조**:
-  ```json
-  {
-      "msg": <message type>,
-      "session": <null or session string>,
-      "payload": {
-          <payload contents>
-      }
+### 참가자 요청 메시지
+
+참가자 요청 메시지는 다음과 같은 기본 구조를 가집니다:
+
+```json
+{
+  "msg": "COMPETITOR_APP_STARTED",
+  "session": "unique_session_id",
+  "payload": {
+    "team_name": "팀 이름",
+    "version": "1.0.0"
   }
-  ```
+}
+```
 
-- **메시지 타입 및 payload 포맷**:
-  - **COMPETITOR_APP_STARTED (101)**: 참가자 애플리케이션 시작 요청
-    - **설명**: 참가자 애플리케이션이 실행되어 stage task를 수행할 준비가 되었음을 플랫폼에 알리는 요청 메시지
-    - **주의사항**: 
-      - session 값은 무시됨 (session key 발급 전 호출)
-      - team과 token은 경진대회 참가 신청서 제출 시 받은 값을 사용
-      - stage는 참가자 어플리케이션이 stage 1까지 수행할지 stage 2까지 수행할지 선택값
-    - **데이터 구조**:
-      ```json
-      {
-          "msg": 101,
-          "session": "",
-          "payload": {
-            "team": "your_team_id",
-            "token": "your_auth_token",
-            "stage": 2
-          }
-      }
-      ```
+### 플랫폼 응답 메시지
 
-  - **REPORT_STAGE1_COMPLETED (102)**: Stage 1 완료 보고 요청
-    - **설명**: 참가자 애플리케이션이 Stage 1 임무를 완료하고 결과를 플랫폼에 보고하는 요청 메시지
-    - **주의사항**: 
-      - session key는 COMPETITOR_APP_STARTED 응답에서 받은 값을 사용
-    - **데이터 구조**:
-      ```json
-      {
-          "msg": 102,
-          "session": "<session key>",
-          "payload": {
-              "object_detections": [
-                 {"class_name": "master_shelf_can", "position": [x, y, z]},
-                 ... 
-              ],
-          }
-      }
-      ```
+플랫폼 응답 메시지는 다음과 같은 기본 구조를 가집니다:
 
-  - **REPORT_STAGE2_COMPLETED (103)**: Stage 2 완료 보고 요청
-    - **설명**: 참가자 애플리케이션이 Stage 2 임무를 완료하고 결과를 플랫폼에 보고하는 요청 메시지
-    - **주의사항**: 
-      - session key는 COMPETITOR_APP_STARTED 응답에서 받은 값을 사용
-      - payload는 무시됨
-    - **데이터 구조**:
-      ```json
-      {
-          "msg": 103,
-          "session": "<session key>",
-          "payload": {
-          }
-      }
-      ```
-
-### 2. 플랫폼 응답 메시지
-- **토픽**: `/metasejong2025/competitor_response`
-- **타입**: std_msgs/msg/String (JSON)
-- **설명**: 참가자의 요청에 대한 플랫폼의 응답 메시지
-- **기본 데이터 구조**:
-  ```json
-  {
-      "msg": <message type>,
-      "status": <status code>,
-      "status_message": <status message>,
-      "result": {
-          <result contents>
-      }
+```json
+{
+  "msg": "COMPETITOR_APP_STARTED_RESPONSE",
+  "status": "success",
+  "status_message": "성공적으로 처리되었습니다.",
+  "result": {
+    "session": "unique_session_id",
+    "stage": 1,
+    "time_limit": 300
   }
-  ```
-  - **msg**: 10X 형식의 요청 메시지에 대해 20X 형식의 응답 메시지 유형
-  - **status**: 1(success) 또는 0(failed)
-  - **status_message**: status가 1일 경우 "OK", 0일 경우 오류 원인
-  - **result**: 메시지 유형에 따른 응답 내용
+}
+```
 
-- **메시지 타입 및 payload 포맷**:
-  - **COMPETITOR_APP_STARTED_RESPONSE (201)**: 참가자 애플리케이션 시작 응답
-    - **설명**: COMPETITOR_APP_STARTED(101) 요청에 대한 응답
-    - **주의사항**: 
-      - team 인증 성공 시 session key 발급
-      - 인증 실패 시 status가 0으로 설정되고 오류 원인이 status_message에 포함
-    - **데이터 구조**:
-      ```json
-      {
-          "msg": 201,
-          "status": 1,
-          "status_message": "OK",
-          "result": {
-              "session": "<session key>"
-          }
-      }
-      ```
+### 플랫폼 통지 메시지
 
-  - **REPORT_STAGE1_COMPLETED_RESPONSE (202)**: Stage 1 완료 보고 응답
-    - **설명**: REPORT_STAGE1_COMPLETED(102) 요청에 대한 응답
-    - **주의사항**: 
-      - 응답 수신 후 ENV_METASEJONG_TEAM_TARGET_LEVEL 값에 따라 다음 동작 결정
-      - 처리 오류 시 status가 0으로 설정되고 오류 원인이 status_message에 포함
-    - **데이터 구조**:
-      ```json
-      {
-          "msg": 202,
-          "status": 1,
-          "status_message": "OK",
-          "result": {
-              "dummy": ""
-          }
-      }
-      ```
+플랫폼 통지 메시지는 다음과 같은 기본 구조를 가집니다:
 
-  - **REPORT_STAGE2_COMPLETED_RESPONSE (203)**: Stage 2 완료 보고 응답
-    - **설명**: REPORT_STAGE2_COMPLETED(103) 요청에 대한 응답
-    - **주의사항**: 
-      - 응답 수신 후 애플리케이션 종료 가능
-      - 처리 오류 시 status가 0으로 설정되고 오류 원인이 status_message에 포함
-    - **데이터 구조**:
-      ```json
-      {
-          "msg": 203,
-          "status": 1,
-          "status_message": "OK",
-          "result": {
-              "dummy": ""
-          }
-      }
-      ```
-
-### 3. 플랫폼 통지 메시지
-- **토픽**: `/metasejong2025/competitor_notification`
-- **타입**: std_msgs/msg/String (JSON)
-- **설명**: 플랫폼이 참가자에게 전송하는 통지 메시지
-- **기본 데이터 구조**:
-  ```json
-  {
-      "msg": <message type>,
-      "session": "<session key>",
-      "payload": {
-          <payload contents>
-      }
+```json
+{
+  "msg": "TIME_CONSTRAINT_EXPIRED",
+  "session": "unique_session_id",
+  "payload": {
+    "current_stage": 1,
+    "elapsed_time": 300,
+    "remaining_tasks": 2
   }
-  ```
+}
+```
 
-- **메시지 타입 및 payload 포맷**:
-  - **TIME_CONSTRAINT_EXPIRED (301)**: 제한 시간 만료 통지
-    - **설명**: 경연 시나리오의 제한 시간이 만료되었음을 알리는 통지 메시지
-    - **주의사항**: 
-      - 메시지 수신 후 즉시 애플리케이션 종료 필요
-      - 플랫폼은 제한 시간 만료 후 요청 메시지 수신 중단
-    - **데이터 구조**:
-      ```json
-      {
-          "msg": 301,
-          "session": "<session key>",
-          "payload": {
-              "dummy": ""
-          }
-      }
-      ```
+## 사용 예시
 
-  - **COMPETITOR_REQUEST_ERROR (302)**: 참가자 요청 오류 통지
-    - **설명**: 플랫폼 동작 중 발생한 오류를 참가자에게 알리는 통지 메시지
-    - **데이터 구조**:
-      ```json
-      {
-          "msg": 302,
-          "session": "<session key>",
-          "payload": {
-              "error_message": "오류 메시지"
-          }
-      }
-      ```
+다음은 기본적인 ROS2 노드 구현 예시입니다:
 
-## 센서 데이터
+```python
+import rclpy
+from rclpy.node import Node
+from sensor_msgs.msg import Image
+from geometry_msgs.msg import Twist
 
-### 1. 고정 카메라 데이터
-- **토픽**: `/metasejong2025/cameras/<field_name>/image_raw`
-- **타입**: sensor_msgs/Image
-- **설명**: 고정 카메라에서 촬영한 RGB 이미지
-- **데이터 구조**:
-  ```json
-  {
-      "header": {
-          "stamp": {"sec": 0, "nanosec": 0},
-          "frame_id": "camera_link"
-      },
-      "height": 480,
-      "width": 640,
-      "encoding": "rgb8",
-      "is_bigendian": 0,
-      "step": 1920,
-      "data": [/* 이미지 데이터 */]
-  }
-  ```
+class CompetitorNode(Node):
+    def __init__(self):
+        super().__init__('competitor_node')
+        
+        # 구독자 생성
+        self.image_sub = self.create_subscription(
+            Image,
+            '/metasejong2025/camera/image_raw',
+            self.image_callback,
+            10)
+            
+        self.depth_sub = self.create_subscription(
+            Image,
+            '/metasejong2025/camera/depth',
+            self.depth_callback,
+            10)
+            
+        # 발행자 생성
+        self.cmd_vel_pub = self.create_publisher(
+            Twist,
+            '/metasejong2025/cmd_vel',
+            10)
+            
+    def image_callback(self, msg):
+        # 이미지 처리 로직
+        pass
+        
+    def depth_callback(self, msg):
+        # 깊이 데이터 처리 로직
+        pass
+        
+    def move_robot(self, linear_x, angular_z):
+        msg = Twist()
+        msg.linear.x = linear_x
+        msg.angular.z = angular_z
+        self.cmd_vel_pub.publish(msg)
 
-### 2. 카메라 정보
-- **토픽**: `/metasejong2025/cameras/<field_name>/camera_info`
-- **타입**: sensor_msgs/msg/CameraInfo
-- **설명**: 카메라의 내부/외부 파라미터 정보
-- **데이터 구조**:
-  ```json
-  {
-      "header": {
-          "stamp": {"sec": 0, "nanosec": 0},
-          "frame_id": "camera_link"
-      },
-      "height": 480,
-      "width": 640,
-      "distortion_model": "plumb_bob",
-      "d": [0.0, 0.0, 0.0, 0.0, 0.0],
-      "k": [525.0, 0.0, 319.5, 0.0, 525.0, 239.5, 0.0, 0.0, 1.0],
-      "r": [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0],
-      "p": [525.0, 0.0, 319.5, 0.0, 0.0, 525.0, 239.5, 0.0, 0.0, 0.0, 1.0, 0.0]
-  }
-  ```
+def main():
+    rclpy.init()
+    node = CompetitorNode()
+    rclpy.spin(node)
+    node.destroy_node()
+    rclpy.shutdown()
 
-### 3. 로봇 카메라 데이터
-- **토픽**: `/metasejong2025/robot_camera/color`
-- **타입**: sensor_msgs/msg/Image
-- **설명**: 로봇 카메라에서 촬영한 RGB 이미지
-- **데이터 구조**: 고정 카메라 데이터와 동일
+if __name__ == '__main__':
+    main()
+```
 
-### 4. 로봇 카메라 깊이 데이터
-- **토픽**: `/metasejong2025/robot_camera/depth`
-- **타입**: sensor_msgs/msg/Image
-- **설명**: 로봇 카메라에서 촬영한 깊이 이미지
-- **데이터 구조**:
-  ```json
-  {
-      "header": {
-          "stamp": {"sec": 0, "nanosec": 0},
-          "frame_id": "robot_camera_link"
-      },
-      "height": 480,
-      "width": 640,
-      "encoding": "32FC1",
-      "is_bigendian": 0,
-      "step": 2560,
-      "data": [/* 깊이 데이터 */]
-  }
-  ```
+## 주의사항
 
-### 5. 라이다 스캔 데이터
-- **토픽**: `/metasejong2025/scan`
-- **타입**: sensor_msgs/msg/LaserScan
-- **설명**: 라이다 센서에서 측정한 스캔 데이터
-- **데이터 구조**:
-  ```json
-  {
-      "header": {
-          "stamp": {"sec": 0, "nanosec": 0},
-          "frame_id": "laser_link"
-      },
-      "angle_min": -3.14159,
-      "angle_max": 3.14159,
-      "angle_increment": 0.0174533,
-      "time_increment": 0.0,
-      "scan_time": 0.1,
-      "range_min": 0.1,
-      "range_max": 30.0,
-      "ranges": [/* 거리 데이터 */],
-      "intensities": [/* 강도 데이터 */]
-  }
-  ```
+1. **메시지 주기**
+   - 센서 데이터는 30Hz로 발행됩니다.
+   - 제어 명령은 최대 10Hz로 발행할 수 있습니다.
 
-## 로봇 상태, 네비게이션 및 제어
+2. **오류 처리**
+   - 모든 메시지에는 타임스탬프가 포함되어 있습니다.
+   - 메시지 손실이나 지연이 발생할 수 있으므로 적절한 오류 처리가 필요합니다.
 
-### 1. 로봇 위치 정보
-- **토픽**: `/metasejong2025/odom`
-- **타입**: nav_msgs/Odometry
-- **설명**: 로봇의 현재 위치 및 방향 정보
-- **데이터 구조**:
-  ```json
-  {
-      "header": {
-          "stamp": {"sec": 0, "nanosec": 0},
-          "frame_id": "odom"
-      },
-      "child_frame_id": "base_link",
-      "pose": {
-          "position": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0
-          },
-          "orientation": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
-              "w": 1.0
-          }
-      },
-      "twist": {
-          "linear": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0
-          },
-          "angular": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0
-          }
-      }
-  }
-  ```
+3. **성능 고려사항**
+   - 이미지 처리 시 메모리 사용량을 고려해야 합니다.
+   - 제어 명령은 적절한 주기로 발행해야 합니다.
 
-### 2. 좌표계 변환 정보
-- **토픽**: `/metasejong2025/tf`
-- **타입**: tf2_msgs/TFMessage
-- **설명**: 좌표계 간 변환 정보
-- **데이터 구조**:
-  ```json
-  {
-      "transforms": [
-          {
-              "header": {
-                  "stamp": {"sec": 0, "nanosec": 0},
-                  "frame_id": "odom"
-              },
-              "child_frame_id": "base_link",
-              "transform": {
-                  "translation": {
-                      "x": 0.0,
-                      "y": 0.0,
-                      "z": 0.0
-                  },
-                  "rotation": {
-                      "x": 0.0,
-                      "y": 0.0,
-                      "z": 0.0,
-                      "w": 1.0
-                  }
-              }
-          }
-      ]
-  }
-  ```
-
-### 3. 로봇 이동 명령
-- **토픽**: `/metasejong2025/cmd_vel`
-- **타입**: geometry_msgs/Twist
-- **설명**: 로봇의 이동 속도 제어 명령
-- **데이터 구조**:
-  ```json
-  {
-      "linear": {
-          "x": 0.0,  // 전진/후진 속도 (m/s)
-          "y": 0.0,  // 좌우 이동 속도 (m/s)
-          "z": 0.0   // 상하 이동 속도 (m/s)
-      },
-      "angular": {
-          "x": 0.0,  // 롤 회전 속도 (rad/s)
-          "y": 0.0,  // 피치 회전 속도 (rad/s)
-          "z": 0.0   // 요 회전 속도 (rad/s)
-      }
-  }
-  ```
-
-### 4. 로봇팔 제어 명령
-- **토픽**: `/metasejong2025/ppcmd`
-- **타입**: std_msgs/msg/String
-- **설명**: 로봇팔의 동작 제어 명령
-- **데이터 구조**:
-  `<picking_quatenion_angle_for_gripper> <picking_endpoint_for_gripper> <placing_quatenion_angle_for_gripper> <placing_endpoint_for_gripper>`
-  
-  <picking_quatenion_angle_for_gripper>: 쓰레기를 집기 위한 gripper의 진입 각도, 공백문자로 구분되는 4개의 실수(quatenion)
-  <picking_endpoint_for_gripper>: 쓰레기를 집기 위한 gripper의 endpoint 위치, 공백문자로 구분되는 3개의 실수(x, y, z)
-  <placing_quatenion_angle_for_gripper>: 쓰레기를 수거하기 위한 gripper의 진입 각도, 공백문자로 구분되는 4개의 실수(quatenion)
-  <placing_endpoint_for_gripper>: 쓰레기를 수거하기 위한 gripper의 endpoint 위치, 공백문자로 구분되는 3개의 실수(x, y, z)
+4. **디버깅**
+   - ROS2 명령어를 사용하여 토픽 모니터링이 가능합니다.
+   - rqt 도구를 사용하여 시각적 디버깅이 가능합니다.

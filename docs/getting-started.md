@@ -2,11 +2,11 @@
 
 ## Introduction
 
-Welcome to the MetaSejong AI Robotics Challenge 2025! This competition is a side event of IEEE MetaCom 2025 and is part of the MetaCom 2025 Student Challenge Programs. It provides an innovative platform that combines metaverse and AI robotics technologies.
+Welcome to the MetaSejong AI Robotics Challenge 2025! This competition is a co-located event of IEEE MetaCom 2025 and part of the MetaCom 2025 Student Challenge Programs. It provides an innovative platform that combines metaverse and AI robotics technologies.
 
-The MetaSejong AI Robotics Challenge takes place in a metaverse space modeled after Sejong University. Participating teams will solve given challenges using Embodied AI technology in this virtual environment. Participants will control robots and perform missions by applying various AI technologies in the virtual Sejong University campus.
+The MetaSejong AI Robotics Challenge takes place in a metaverse space modeled after Sejong University. Participating teams will solve given tasks using Embodied AI technology in this virtual environment. Participants will control robots in the virtual Sejong University campus and perform missions by applying various AI technologies.
 
-This guide provides a comprehensive walkthrough from development environment setup to mission execution. It explains in detail how to interact with the virtual environment through ROS2 standard interfaces, helping participants prepare smoothly for the competition.
+This guide provides step-by-step instructions for the entire process, from setting up the development environment to mission execution. It details how to interact with the virtual environment through the ROS2 standard interface, helping participants prepare smoothly for the competition.
 
 ## System Architecture
 
@@ -28,7 +28,7 @@ The MetaSejong Platform is a metaverse virtual environment of Sejong University 
     - Docker container-based independent development space
 
 3. **Communication Interface**
-The APIs required for participants to perform missions are provided through ROS2 interfaces. Detailed API documentation is available in a separate document, including the following main features:
+The API required for participants to perform missions is provided through the ROS2 interface. Detailed API documentation is available in a separate document, including the following main features:
 
     - Robot control interface
     - Sensor data collection
@@ -39,7 +39,8 @@ The MetaSejong Platform serves as a learning environment for the AI Robotics app
 
 ## Prerequisites
 
-To participate in the MetaSejong AI Robotics Challenge 2025, the following requirements must be met. Each requirement is essential for competition participation and development:
+To participate in the MetaSejong AI Robotics Challenge 2025, you must meet the following requirements. Each requirement is essential for competition participation and development:
+For detailed information about the prerequisites, please refer to the [Technical Guide](technical-guide.md).
 
 ### 1. Hardware Requirements
 
@@ -49,7 +50,7 @@ To participate in the MetaSejong AI Robotics Challenge 2025, the following requi
 - **GPU**: NVIDIA RTX 3080 or NVIDIA RTX A5000 or higher
   - CUDA 11.7 or higher support
   - Minimum 8GB VRAM
-- **Storage**: SSD with 100GB or more free space
+- **Storage**: 100GB or more free space on SSD
 - **Network**: 1Gbps or higher network connection
 
 #### Participant Development Environment
@@ -78,13 +79,13 @@ To participate in the MetaSejong AI Robotics Challenge 2025, the following requi
 
 ### 3. Development Tools and Knowledge Requirements
 
-#### Essential Development Tools
+#### Required Development Tools
 - **Git**: Version control and collaboration
 - **Docker**: Container-based development environment management
 - **ROS2**: Robot control system development
 - **Python IDE**: Code writing and debugging
 
-#### Essential Knowledge
+#### Required Knowledge
 - **Python Programming**: Algorithm implementation and debugging
 - **ROS2 Basic Concepts**: Topics, services, actions, etc.
 - **Docker Basic Usage**: Image building and container execution
@@ -110,19 +111,19 @@ To participate in the MetaSejong AI Robotics Challenge 2025, the following requi
 
 #### 1.1 System Prerequisites Setup
 
-The MetaSejong Platform is an IsaacSim simulation application distributed via Docker that includes a GUI. To run GUI applications in Docker, X11 settings are required.
+The MetaSejong Platform is an IsaacSim simulation application distributed via Docker, including a GUI. X11 setup is required to run GUI applications in Docker.
 
-1. **X11 Settings Check**
+1. **X11 Setup Verification**
    ```bash
-   # Check X11 settings
+   # Check X11 setup
    echo $DISPLAY
    ```
    - Output should be in the format `:1` or `localhost:1`
    - If X11 is not set up, refer to [Ubuntu X Architecture](https://wiki.ubuntu.com/X/Architecture) for setup instructions
 
-#### 1.2 Competition Repository Cloning
+#### 1.2 Competition Repository Clone
 
-1. **Repository Cloning**
+1. **Repository Clone**
    ```bash
    # Clone MetaSejong Platform repository
    git clone https://github.com/metasejong-competition/metacom2025-metasejong
@@ -130,7 +131,7 @@ The MetaSejong Platform is an IsaacSim simulation application distributed via Do
    ```
 
 2. **Repository Structure**
-   - `docker-compose.yml`: Environment configuration settings file
+   - `docker-compose.yml`: Environment configuration file
    - `Makefile`: Build and execution commands
    - Example code and documentation
 
@@ -154,13 +155,13 @@ The MetaSejong Platform is an IsaacSim simulation application distributed via Do
 
 1. **X11 Activation**
    ```bash
-   # Activate X11 (run only once)
+   # Activate X11 (run once)
    make setup
    ```
 
 2. **Platform Execution**
    ```bash
-   # Run MetaSejong Platform
+   # Execute MetaSejong Platform
    make run
    ```
    - Note that there may be performance limitations during execution
@@ -177,10 +178,10 @@ The MetaSejong Platform is an IsaacSim simulation application distributed via Do
 #### 2.2 Development Environment Repository Setup
 
 1. **Repository Fork**
-   - Fork [Development Environment Repository](https://github.com/metasejong-competition/metasejong-airobotics)
+   - Fork the [Development Environment Repository](https://github.com/metasejong-competition/metasejong-airobotics)
    - Private repository recommended
 
-2. **Repository Cloning**
+2. **Repository Clone**
    ```bash
    # Clone development environment repository
    git clone https://github.com/<your_team_account>/metasejong-airobotics
@@ -196,7 +197,7 @@ The MetaSejong Platform is an IsaacSim simulation application distributed via Do
    export ENV_METASEJONG_TEAM_TOKEN="your_team_token"
    export ENV_METASEJONG_TEAM_TARGET_STAGE="your_target_stage"
 
-   # Set permanent environment variables (optional)
+   # Permanent environment variable setup (optional)
    echo "export ENV_METASEJONG_TEAM_NAME=\"your_team_name\"" >> ~/.bashrc
    ```
 
@@ -207,33 +208,14 @@ The MetaSejong Platform is an IsaacSim simulation application distributed via Do
    |ENV_METASEJONG_TEAM_TOKEN|87cef2059293b764451516c5e632e8b5|
    |ENV_METASEJONG_TEAM_TARGET_STAGE|2|
 
-#### 2.4 Build and Execution
+#### 2.4 Execution
 
-1. **Build Commands**
+1. **Execution Command**
    ```bash
-   # Build development image
-   make build-dev
-   
-   # Build production image
-   make build-prod
+   make run
    ```
 
-2. **Execution Commands**
-   ```bash
-   # Run development environment
-   make up-dev
-   
-   # Run production environment
-   make up-prod
-   
-   # Stop container
-   make down
-   
-   # Clean Docker resources
-   make clean
-   ```
-
-### 3. Result Submission
+### 3. Submission
 
 #### 3.1 Submission Preparation
 
@@ -242,7 +224,7 @@ The MetaSejong Platform is an IsaacSim simulation application distributed via Do
    - Document execution method (HOWTORUN.md)
 
 2. **Repository Sharing**
-   - Add organizer's GitHub account as collaborator
+   - Register organizer's GitHub account as collaborator
    - Verify private repository settings
 
 #### 3.2 Submission Requirements
@@ -254,82 +236,62 @@ The MetaSejong Platform is an IsaacSim simulation application distributed via Do
    - HOWTORUN.md (if needed)
 
 2. **Execution Method**
-   - Must be executable with `make up-prod` command
+   - Must be executable with `make run` command
    - Document any special settings in detail
 
 ## Demo Application
 
-### 1. Demo Application Structure
+For detailed structure and development guide of the demo application, please refer to the [Technical Guide](technical-guide.md).
 
-The demo application is provided with the following structure:
+### 1. Demo Application Execution
 
-```
-.
-|   # Project guide document
-├── README.md       
-|   # Docker related files
-├── Dockerfile      
-├── Dockerfile.dev
-├── docker-compose.yaml
-├── entrypoint.sh
-|   # Commands for development, score calculation, etc.
-├── Makefile
-|   # Participant application workspace (ROS2 Workspace)
-└── metasejong_competitor_ws
-    └── src
-        |   
-        └── airobotics_app
-            |   # ROS2 package definition and module dependencies
-            ├── package.xml
-            ├── requirements.txt
-            |   # Participant ROS Node implementation
-            ├── airobotics_node
-            │   ├── __init__.py
-            |   |   # ROS Node execution entry point
-            │   ├── airobotics_node.py
-            |   |   # Basic competition participant application template example implementation (abstract implementation)
-            │   ├── competition_task_base.py
-            |   |   # Basic competition participant application template example implementation
-            │   ├── competition_task_implementation.py
-            │   ├── competitor_request_message.py
-            |   |   # Utility function example implementation
-            │   ├── robot_node.py
-            │   ├── robot_util.py
-            │   └── world_coordinates_util.py
-            ├── resource
-            │   ├── airobotics_app
-            │   └── metasejong
-            ├── setup.cfg
-            └── setup.py
+The demo application operates using answer sheets generated by the MetaSejong Platform running on your local computer for demonstration and learning purposes. The answer sheets provide information about the types and locations of randomly generated trash objects based on the competition scenario definition. The demo application implements object recognition and pose estimation technologies that participants need to develop in a mockup form, utilizing the answer sheets for competition protocol implementation and robot control.
+
+#### 1.1 Answer Sheet File Connection
+- **Answer Sheet File Path**: `<MetaSejong Platform execution path>/scenario-data/answer-sheets/<scenario name>_answer_sheet.yaml`
+- **Demo Application Answer Sheet Location**: `<Development environment project>/demo/demo_answer_sheet.yaml`
+- **Note**: Since answer sheets are newly generated each time the MetaSejong Platform is executed, it is recommended to set up a symbolic link rather than copying the file.
+
+#### 1.2 Team Information Environment Setup
+According to the competition protocol, the participant application must present team ID, authentication token, and supported Stage information to the MetaSejong Platform. This information must be set as environment variables.
+
+```yaml
+environment:
+  - ...
+  - ENV_METASEJONG_TEAM_NAME=team_passion_for_challenges
+  - ENV_METASEJONG_TEAM_TOKEN=87cef2059293b764451516c5e632e8b5
+  - ENV_METASEJONG_TEAM_TARGET_STAGE=2
 ```
 
-### 2. Demo Application Workflow
+**Note**: When submitting competition results, you must modify this information with the values issued during the application process.
 
-![workflow](./_static/images/task_and_evaluation_protocol.jpg)
+### 2. Demo Application Operation Flow
 
-The demo application workflow is as follows:
+![Demo Application Operation Flow](./_static/images/task_and_evaluation_protocol.jpg)
+
+The above diagram shows the complete operation flow of the demo application. The main steps are as follows:
 
 1. **Participant Application Start Request**
    - Send COMPETITOR_APP_STARTED request
    - Include team ID, authentication token, supported stage
-   - stage 1: object detection and pose estimation
-   - stage 2: object collection and classification
+   - Stage 1: Object detection and pose estimation
+   - Stage 2: Object collection and classification
 
 2. **Participant Work Preparation Phase**
-   - Platform validates team ID and authentication token
+   - Platform verifies team ID and authentication token
    - Competition environment configuration
-   - Virtual environment data streaming starts
-   - Data provision through ROS Topic begins
+   - Virtual environment data streaming begins
+   - Data provision through ROS Topics begins
 
 3. **Start Response Reception**
    - Receive COMPETITOR_APP_STARTED_RESPONSE
    - Confirm all preparations complete
-   - Begin main competition work
+   - Begin actual competition work
 
 4. **Stage 1 Work**
-   - Analyze fixed camera images
+   - Fixed camera image analysis
    - Object detection and pose estimation
-   - Determine trash object positions and orientations
+   - Trash object location and orientation determination
 
 5. **Stage 1 Result Report and Evaluation**
    - Send REPORT_STAGE1_RESULT request
@@ -347,26 +309,29 @@ The demo application workflow is as follows:
        }
    }
    ```
+   - Score Calculation:
+      Stage 1 score is calculated by comparing the ground truth stored in the MetaSejong Platform with the 'object_detections' field in the participant's Stage 1 result submission. The evaluation assesses the accuracy of object recognition and pose estimation. The final score is determined by multiplying the number of matching items by 10.
 
 6. **Stage 2 Work**
-   - Perform actual work using robot
-   - Robot movement and robot arm control
+   - Actual work execution using robot
+   - Robot movement and arm control
    - Trash collection and classification
 
 7. **Robot Control Interface**
    - `/metasejong2025/odom`: Robot position information
    - `/metasejong2025/tf`: Coordinate transformation information
-   - `/metasejong2025/cmd_vel`: Robot movement commands
-   - `/metasejong2025/ppcmd`: Robot arm control commands
+   - `/metasejong2025/cmd_vel`: Robot movement command
+   - `/metasejong2025/ppcmd`: Robot arm control command
 
 8. **Stage 2 Work Evaluation**
-   - Real-time work performance evaluation
+   - Real-time work execution evaluation
    - Collection success and classification success evaluation
-   - Final score calculation:
+   - Score calculation:
    ![Stage 2 Score Calculation Formula](./_static/images/math_formation_stage2_score.jpg)
+
+For detailed implementation methods and API usage for each step, please refer to the [Technical Guide](technical-guide.md).
 
 ## Next Steps
 
 - Read the [Technical Guide](technical-guide.md): You can check detailed technical information.
-- Review the [Competition Rules](rules.md): You can check the essential rules for competition participation.
-- Check the [Submission Guide](submit-guide.md): You can check the guide for result submission methods.
+- Check the [Submission Guide](submit-guide.md): You can find guidance on how to submit your results.
