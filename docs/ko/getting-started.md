@@ -42,6 +42,7 @@ Docker를 사용하여 IsaacSim을 실행하고 메타버스로 구현된 세종
 ## 필수 요구사항
 
 MetaSejong AI Robotics Challenge 2025에 참가하기 위해서는 다음과 같은 요구사항을 충족해야 합니다. 각 요구사항은 대회 참가와 개발에 필수적인 요소들입니다:
+대회 참가를 위한 필수 요구사항에 대한 상세한 내용은 [기술 가이드](technical-guide.md)를 참고하세요.
 
 ### 1. 하드웨어 요구사항
 
@@ -261,55 +262,13 @@ MetaSejong 플랫폼은 Docker로 배포되는 IsaacSim 시뮬레이션 응용�
 
 ## 데모 애플리케이션
 
-### 1. 데모 애플리케이션 구조
+데모 애플리케이션의 상세한 구조와 개발 가이드는 [기술 가이드](technical-guide.md)를 참고하세요.
 
-데모 애플리케이션은 다음과 같은 구조로 제공됩니다:
+### 1. 데모 애플리케이션 동작 흐름
 
-```
-.
-|   # 프로젝트 가이드 문서
-├── README.md       
-|   # Docker 관련 파일
-├── Dockerfile      
-├── Dockerfile.dev
-├── docker-compose.yaml
-├── entrypoint.sh
-|   # 개발, 점수 계산 등을 위한 명령어
-├── Makefile
-|   # 참가자 애플리케이션 작업 공간 (ROS2 Workspace)
-└── metasejong_competitor_ws
-    └── src
-        |   
-        └── airobotics_app
-            |   # ROS2 패키지 정의 및 모듈 의존성
-            ├── package.xml
-            ├── requirements.txt
-            |   # 참가자 ROS Node 구현
-            ├── airobotics_node
-            │   ├── __init__.py
-            |   |   # ROS Node 실행 진입점
-            │   ├── airobotics_node.py
-            |   |   # 기본 대회 참가자 애플리케이션 템플릿 예제 구현 (추상 구현)
-            │   ├── competition_task_base.py
-            |   |   # 기본 대회 참가자 애플리케이션 템플릿 예제 구현
-            │   ├── competition_task_implementation.py
-            │   ├── competitor_request_message.py
-            |   |   # 유틸리티 함수 예제 구현
-            │   ├── robot_node.py
-            │   ├── robot_util.py
-            │   └── world_coordinates_util.py
-            ├── resource
-            │   ├── airobotics_app
-            │   └── metasejong
-            ├── setup.cfg
-            └── setup.py
-```
+![데모 애플리케이션 동작 흐름](./_static/images/task_and_evaluation_protocol.jpg)
 
-### 2. 데모 애플리케이션 동작 흐름
-
-![workflow](./_static/images/task_and_evaluation_protocol.jpg)
-
-데모 애플리케이션의 동작 흐름은 다음과 같습니다:
+위 그림은 데모 애플리케이션의 전체 동작 흐름을 보여줍니다. 주요 단계별 설명은 다음과 같습니다:
 
 1. **참가자 애플리케이션 시작 요청**
    - COMPETITOR_APP_STARTED 요청 전송
@@ -366,6 +325,8 @@ MetaSejong 플랫폼은 Docker로 배포되는 IsaacSim 시뮬레이션 응용�
    - 수집 성공 여부 및 분류 성공 여부 평가
    - 최종 점수 계산:
    ![Stage 2 점수 계산 수식](./_static/images/math_formation_stage2_score.jpg)
+
+각 단계별 상세한 구현 방법과 API 사용법은 [기술 가이드](technical-guide.md)를 참고하세요.
 
 ## 다음 단계
 
