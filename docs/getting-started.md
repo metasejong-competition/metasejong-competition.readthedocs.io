@@ -194,7 +194,7 @@ The MetaSejong Platform is an IsaacSim simulation application distributed via Do
    # Set environment variables
    export ENV_METASEJONG_TEAM_NAME="your_team_name"
    export ENV_METASEJONG_TEAM_TOKEN="your_team_token"
-   export ENV_METASEJONG_TEAM_TARGET_LEVEL="your_target_level"
+   export ENV_METASEJONG_TEAM_TARGET_STAGE="your_target_stage"
 
    # Set permanent environment variables (optional)
    echo "export ENV_METASEJONG_TEAM_NAME=\"your_team_name\"" >> ~/.bashrc
@@ -205,7 +205,7 @@ The MetaSejong Platform is an IsaacSim simulation application distributed via Do
    |---|---|
    |ENV_METASEJONG_TEAM_NAME|team_passion_for_challenges|
    |ENV_METASEJONG_TEAM_TOKEN|87cef2059293b764451516c5e632e8b5|
-   |ENV_METASEJONG_TEAM_TARGET_LEVEL|2|
+   |ENV_METASEJONG_TEAM_TARGET_STAGE|2|
 
 #### 2.4 Build and Execution
 
