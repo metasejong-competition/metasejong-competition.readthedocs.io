@@ -144,7 +144,7 @@ MetaSejong 플랫폼은 Docker로 배포되는 IsaacSim 시뮬레이션 응용�
    # Makefile을 통한 다운로드
    make download
    ```
-   - 또는 직접 다운로드: [metasejong-metacom2025-r02.tar](https://drive.google.com/file/d/10r-tzDj0qS6OKWEle0gl4GnRtEitVKD5/view?usp=sharing)
+   - 또는 직접 다운로드: [metasejong-metacom2025-with-playground-r05.tar](https://drive.google.com/file/d/1DJ9TKhRjXyTLyUMTSaaSEs4mg_UPDcd4/view?usp=drive_link)
    - 다운로드 받은 파일명은 변경하지 마세요.
 
 2. **Docker 이미지 로드**

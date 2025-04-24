@@ -142,7 +142,7 @@ The MetaSejong Platform is an IsaacSim simulation application distributed via Do
    # Download via Makefile
    make download
    ```
-   - Or direct download: [metasejong-metacom2025-r02.tar](https://drive.google.com/file/d/10r-tzDj0qS6OKWEle0gl4GnRtEitVKD5/view?usp=sharing)
+   - Or direct download: [metasejong-metacom2025-with-playground-r05.tar](https://drive.google.com/file/d/1DJ9TKhRjXyTLyUMTSaaSEs4mg_UPDcd4/view?usp=drive_link)
    - Do not change the downloaded filename
 
 2. **Docker Image Load**
