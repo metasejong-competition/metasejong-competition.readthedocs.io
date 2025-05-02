@@ -1,4 +1,4 @@
-# MetaSejong Competition
+# MARC (Meta-Sejong AI Robotics Challenge) 2025
 
 Welcome to the MARC (Meta-Sejong AI Robotics Challenge) 2025! 
 

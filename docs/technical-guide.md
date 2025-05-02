@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This technical guide provides detailed information about the development environment setup, coding style, and implementation methods for the MetaSejong AI Robotics Challenge 2025. It is designed to help participants understand the technical aspects of the competition and develop their solutions effectively.
+This technical guide provides detailed information about the development environment setup, coding style, and implementation methods for the MARC (Meta-Sejong AI Robotics Challenge) 2025. It is designed to help participants understand the technical aspects of the competition and develop their solutions effectively.
 
 ## Development Environment Setup
 

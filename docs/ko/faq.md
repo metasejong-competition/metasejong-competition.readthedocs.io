@@ -2,8 +2,8 @@
 
 ## General Questions
 
-### Q: What is the MetaSejong Competition?
-A: The MetaSejong Competition is a robotics competition focused on autonomous navigation and control using ROS2.
+### Q: What is the MARC (Meta-Sejong AI Robotics Challenge) 2025?
+A: The MARC (Meta-Sejong AI Robotics Challenge) 2025 is a robotics competition focused on autonomous navigation and control using ROS2.
 
 ### Q: Who can participate?
 A: The competition is open to all students. You can participate individually or as a team of up to 4 members.

@@ -2,7 +2,7 @@
 
 ## 개요
 
-본 가이드는 MetaSejong AI Robotics Challenge 2025의 개발 환경 구축과 데모 애플리케이션에 대한 상세한 기술 정보를 제공합니다.
+본 가이드는 MARC (Meta-Sejong AI Robotics Challenge) 2025의 개발 환경 구축과 데모 애플리케이션에 대한 상세한 기술 정보를 제공합니다.
 
 ## 개발 환경 구축
 

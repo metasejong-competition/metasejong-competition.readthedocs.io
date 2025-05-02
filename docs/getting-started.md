@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Welcome to the MetaSejong AI Robotics Challenge 2025! This competition is a co-located event of IEEE MetaCom 2025 and part of the MetaCom 2025 Student Challenge Programs. It provides an innovative platform that combines metaverse and AI robotics technologies.
+Welcome to the MARC(Meta-Sejong AI Robotics Challenge) 2025! This competition is a co-located event of IEEE MetaCom 2025 and part of the MetaCom 2025 Student Challenge Programs. It provides an innovative platform that combines metaverse and AI robotics technologies.
 
-The MetaSejong AI Robotics Challenge takes place in a metaverse space modeled after Sejong University. Participating teams will solve given tasks using Embodied AI technology in this virtual environment. Participants will control robots in the virtual Sejong University campus and perform missions by applying various AI technologies.
+The MARC(Meta-Sejong AI Robotics Challenge) 2025 takes place in a metaverse space modeled after Sejong University. Participating teams will solve given tasks using Embodied AI technology in this virtual environment. Participants will control robots in the virtual Sejong University campus and perform missions by applying various AI technologies.
 
 This guide provides step-by-step instructions for the entire process, from setting up the development environment to mission execution. It details how to interact with the virtual environment through the ROS2 standard interface, helping participants prepare smoothly for the competition.
 
@@ -14,8 +14,8 @@ This guide provides step-by-step instructions for the entire process, from setti
 
 The competition system consists of the following main components:
 
-1. **MetaSejong Platform**
-The MetaSejong Platform is a metaverse virtual environment of Sejong University built on NVIDIA IsaacSim. It provides the following key features:
+1. **Meta-Sejong Platform**
+The Meta-Sejong Platform is a metaverse virtual environment of Sejong University built on NVIDIA IsaacSim. It provides the following key features:
 
     - Real-time 3D virtual environment simulation
     - Physics engine-based precise robot motion simulation
@@ -35,16 +35,16 @@ The API required for participants to perform missions is provided through the RO
     - Environment information access
     - Mission progress monitoring
 
-The MetaSejong Platform serves as a learning environment for the AI Robotics applications developed by participants. This allows testing and optimization of various scenarios without using actual robots.
+The Meta-Sejong Platform serves as a learning environment for the AI Robotics applications developed by participants. This allows testing and optimization of various scenarios without using actual robots.
 
 ## Prerequisites
 
-To participate in the MetaSejong AI Robotics Challenge 2025, you must meet the following requirements. Each requirement is essential for competition participation and development:
+To participate in the Meta-Sejong Platform, you must meet the following requirements. Each requirement is essential for competition participation and development:
 For detailed information about the prerequisites, please refer to the [Technical Guide](technical-guide.md).
 
 ### 1. Hardware Requirements
 
-#### MetaSejong Platform Execution Environment
+#### Meta-Sejong Platform Execution Environment
 - **CPU**: Intel Core i7-8700K or AMD Ryzen 7 3700X or higher
 - **RAM**: 32GB or more
 - **GPU**: NVIDIA RTX 3080 or NVIDIA RTX A5000 or higher
@@ -62,7 +62,7 @@ For detailed information about the prerequisites, please refer to the [Technical
 
 ### 2. Software Requirements
 
-#### MetaSejong Platform
+#### Meta-Sejong Platform
 - **Operating System**: Ubuntu 22.04 LTS
 - **Python**: 3.10 or higher
 - **Docker**: 20.10 or higher
@@ -107,11 +107,11 @@ For detailed information about the prerequisites, please refer to the [Technical
 
 ## Installation Method
 
-### 1. MetaSejong Platform Installation
+### 1. Meta-Sejong Platform Installation
 
 #### 1.1 System Prerequisites Setup
 
-The MetaSejong Platform is an IsaacSim simulation application distributed via Docker, including a GUI. X11 setup is required to run GUI applications in Docker.
+The Meta-Sejong Platform is an IsaacSim simulation application distributed via Docker, including a GUI. X11 setup is required to run GUI applications in Docker.
 
 1. **X11 Setup Verification**
    ```bash
@@ -125,7 +125,7 @@ The MetaSejong Platform is an IsaacSim simulation application distributed via Do
 
 1. **Repository Clone**
    ```bash
-   # Clone MetaSejong Platform repository
+   # Clone Meta-Sejong Platform repository
    git clone https://github.com/metasejong-competition/metacom2025-metasejong
    cd metacom2025-metasejong
    ```
@@ -161,7 +161,7 @@ The MetaSejong Platform is an IsaacSim simulation application distributed via Do
 
 2. **Platform Execution**
    ```bash
-   # Execute MetaSejong Platform
+   # Execute Meta-Sejong Platform
    make run
    ```
    - Note that there may be performance limitations during execution
@@ -245,15 +245,15 @@ For detailed structure and development guide of the demo application, please ref
 
 ### 1. Demo Application Execution
 
-The demo application operates using answer sheets generated by the MetaSejong Platform running on your local computer for demonstration and learning purposes. The answer sheets provide information about the types and locations of randomly generated trash objects based on the competition scenario definition. The demo application implements object recognition and pose estimation technologies that participants need to develop in a mockup form, utilizing the answer sheets for competition protocol implementation and robot control.
+The demo application operates using answer sheets generated by the Meta-Sejong Platform running on your local computer for demonstration and learning purposes. The answer sheets provide information about the types and locations of randomly generated trash objects based on the competition scenario definition. The demo application implements object recognition and pose estimation technologies that participants need to develop in a mockup form, utilizing the answer sheets for competition protocol implementation and robot control.
 
 #### 1.1 Answer Sheet File Connection
-- **Answer Sheet File Path**: `<MetaSejong Platform execution path>/scenario-data/answer-sheets/<scenario name>_answer_sheet.yaml`
+- **Answer Sheet File Path**: `<Meta-Sejong Platform execution path>/scenario-data/answer-sheets/<scenario name>_answer_sheet.yaml`
 - **Demo Application Answer Sheet Location**: `<Development environment project>/demo/demo_answer_sheet.yaml`
-- **Note**: Since answer sheets are newly generated each time the MetaSejong Platform is executed, it is recommended to set up a symbolic link rather than copying the file.
+- **Note**: Since answer sheets are newly generated each time the Meta-Sejong Platform is executed, it is recommended to set up a symbolic link rather than copying the file.
 
 #### 1.2 Team Information Environment Setup
-According to the competition protocol, the participant application must present team ID, authentication token, and supported Stage information to the MetaSejong Platform. This information must be set as environment variables.
+According to the competition protocol, the participant application must present team ID, authentication token, and supported Stage information to the Meta-Sejong Platform. This information must be set as environment variables.
 
 ```yaml
 environment:
@@ -310,7 +310,7 @@ The above diagram shows the complete operation flow of the demo application. The
    }
    ```
    - Score Calculation:
-      Stage 1 score is calculated by comparing the ground truth stored in the MetaSejong Platform with the 'object_detections' field in the participant's Stage 1 result submission. The evaluation assesses the accuracy of object recognition and pose estimation. The final score is determined by multiplying the number of matching items by 10.
+      Stage 1 score is calculated by comparing the ground truth stored in the Meta-Sejong Platform with the 'object_detections' field in the participant's Stage 1 result submission. The evaluation assesses the accuracy of object recognition and pose estimation. The final score is determined by multiplying the number of matching items by 10.
 
 6. **Stage 2 Work**
    - Actual work execution using robot

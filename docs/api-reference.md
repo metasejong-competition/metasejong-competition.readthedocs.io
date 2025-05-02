@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This document provides detailed information about the ROS2 interface for the MetaSejong AI Robotics Challenge 2025. It includes message formats, topic descriptions, and implementation examples to help participants develop their solutions effectively.
+This document provides detailed information about the ROS2 interface for the MARC(Meta-Sejong AI Robotics Challenge) 2025. It includes message formats, topic descriptions, and implementation examples to help participants develop their solutions effectively.
 
 ## ROS2 Topic List
 

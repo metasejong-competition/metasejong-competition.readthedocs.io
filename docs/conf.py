@@ -2,9 +2,9 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('.'))
 
-project = 'MetaSejong Competition'
-copyright = '2024, MetaSejong'
-author = 'MetaSejong'
+project = 'MARC(Meta-Sejong AI Robotics Challenge) 2025'
+copyright = '2024, IOTCOSS(IoT Convergence & Open Sharing System)'
+author = 'IOTCOSS'
 release = '1.0.0'
 
 # Build only English documents

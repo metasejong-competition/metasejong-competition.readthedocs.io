@@ -2,9 +2,9 @@
 
 ## 소개
 
-MetaSejong AI Robotics Challenge 2025에 오신 것을 환영합니다! 본 대회는 IEEE MetaCom 2025의 부대행사이며, MetaCom 2025 Student Challenge Programs의 일환으로 진행됩니다. 메타버스와 AI 로보틱스 기술을 융합한 혁신적인 도전의 장을 제공합니다.
+MARC (Meta-Sejong AI Robotics Challenge) 2025에 오신 것을 환영합니다! 본 대회는 IEEE MetaCom 2025의 부대행사이며, MetaCom 2025 Student Challenge Programs의 일환으로 진행됩니다. 메타버스와 AI 로보틱스 기술을 융합한 혁신적인 도전의 장을 제공합니다.
 
-MetaSejong AI Robotics Challenge는 세종대학교를 모델로 한 메타버스 공간에서 진행됩니다. 참가 팀들은 이 가상 환경에서 Embodied AI 기술을 활용하여 주어진 과제를 해결하게 됩니다. 참가자들은 가상의 세종대학교 캠퍼스에서 로봇을 제어하고, 다양한 AI 기술을 적용하여 미션을 수행하게 됩니다.
+MARC (Meta-Sejong AI Robotics Challenge) 2025는 세종대학교를 모델로 한 메타버스 공간에서 진행됩니다. 참가 팀들은 이 가상 환경에서 Embodied AI 기술을 활용하여 주어진 과제를 해결하게 됩니다. 참가자들은 가상의 세종대학교 캠퍼스에서 로봇을 제어하고, 다양한 AI 기술을 적용하여 미션을 수행하게 됩니다.
 
 본 가이드는 개발 환경 구성부터 미션 수행까지의 전체 과정을 안내합니다. ROS2 표준 인터페이스를 통해 가상 환경과 상호작용하는 방법을 단계별로 상세히 설명하여, 참가자들이 원활하게 대회를 준비할 수 있도록 도와드립니다.
 
@@ -14,8 +14,8 @@ MetaSejong AI Robotics Challenge는 세종대학교를 모델로 한 메타버�
 
 대회 시스템은 다음과 같은 주요 구성 요소로 이루어져 있습니다:
 
-1. **MetaSejong 플랫폼**
-MetaSejong 플랫폼은 NVIDIA IsaacSim을 기반으로 구축된 세종대학교의 메타버스 가상 환경입니다. 다음과 같은 주요 기능을 제공합니다:
+1. **Meta-Sejong 플랫폼**
+Meta-Sejong 플랫폼은 NVIDIA IsaacSim을 기반으로 구축된 세종대학교의 메타버스 가상 환경입니다. 다음과 같은 주요 기능을 제공합니다:
 
     - 실시간 3D 가상 환경 시뮬레이션
     - 물리 엔진 기반의 정밀한 로봇 동작 시뮬레이션
@@ -35,18 +35,18 @@ MetaSejong 플랫폼은 NVIDIA IsaacSim을 기반으로 구축된 세종대학�
     - 환경 정보 접근
     - 미션 진행 상태 모니터링
 
-MetaSejong 플랫폼은 참가자들이 개발하는 AI Robotics 애플리케이션의 학습 환경으로 활용됩니다. 이를 통해 실제 로봇을 사용하지 않고도 다양한 시나리오를 테스트하고 최적화할 수 있습니다.
+Meta-Sejong 플랫폼은 참가자들이 개발하는 AI Robotics 애플리케이션의 학습 환경으로 활용됩니다. 이를 통해 실제 로봇을 사용하지 않고도 다양한 시나리오를 테스트하고 최적화할 수 있습니다.
 
 Docker를 사용하여 IsaacSim을 실행하고 메타버스로 구현된 세종대학교를 탐험해보세요. 이 프로젝트는 Docker Compose를 통해 실행할 수 있는 환경을 제공합니다. 다음 단계를 따라 설치를 진행하세요:
 
 ## 필수 요구사항
 
-MetaSejong AI Robotics Challenge 2025에 참가하기 위해서는 다음과 같은 요구사항을 충족해야 합니다. 각 요구사항은 대회 참가와 개발에 필수적인 요소들입니다:
+MARC (Meta-Sejong AI Robotics Challenge) 2025에 참가하기 위해서는 다음과 같은 요구사항을 충족해야 합니다. 각 요구사항은 대회 참가와 개발에 필수적인 요소들입니다:
 대회 참가를 위한 필수 요구사항에 대한 상세한 내용은 [기술 가이드](technical-guide.md)를 참고하세요.
 
 ### 1. 하드웨어 요구사항
 
-#### MetaSejong 플랫폼 실행 환경
+#### Meta-Sejong 플랫폼 실행 환경
 - **CPU**: Intel Core i7-8700K 또는 AMD Ryzen 7 3700X 이상
 - **RAM**: 32GB 이상
 - **GPU**: NVIDIA RTX 3080 또는 NVIDIA RTX A5000 이상
@@ -64,7 +64,7 @@ MetaSejong AI Robotics Challenge 2025에 참가하기 위해서는 다음과 같
 
 ### 2. 소프트웨어 요구사항
 
-#### MetaSejong 플랫폼
+#### Meta-Sejong 플랫폼
 - **운영체제**: Ubuntu 22.04 LTS
 - **Python**: 3.10 이상
 - **Docker**: 20.10 이상
@@ -109,11 +109,11 @@ MetaSejong AI Robotics Challenge 2025에 참가하기 위해서는 다음과 같
 
 ## 설치 방법
 
-### 1. MetaSejong 플랫폼 설치
+### 1. Meta-Sejong 플랫폼 설치
 
 #### 1.1 시스템 사전 요구사항 설정
 
-MetaSejong 플랫폼은 Docker로 배포되는 IsaacSim 시뮬레이션 응용프로그램으로, GUI를 포함하고 있습니다. GUI 애플리케이션을 Docker에서 실행하기 위해서는 X11 설정이 필요합니다.
+Meta-Sejong 플랫폼은 Docker로 배포되는 IsaacSim 시뮬레이션 응용프로그램으로, GUI를 포함하고 있습니다. GUI 애플리케이션을 Docker에서 실행하기 위해서는 X11 설정이 필요합니다.
 
 1. **X11 설정 확인**
    ```bash
@@ -127,7 +127,7 @@ MetaSejong 플랫폼은 Docker로 배포되는 IsaacSim 시뮬레이션 응용�
 
 1. **저장소 복제**
    ```bash
-   # MetaSejong 플랫폼 저장소 복제
+   # Meta-Sejong 플랫폼 저장소 복제
    git clone https://github.com/metasejong-competition/metacom2025-metasejong
    cd metacom2025-metasejong
    ```
@@ -163,7 +163,7 @@ MetaSejong 플랫폼은 Docker로 배포되는 IsaacSim 시뮬레이션 응용�
 
 2. **플랫폼 실행**
    ```bash
-   # MetaSejong 플랫폼 실행
+   # Meta-Sejong 플랫폼 실행
    make run
    ```
    - 실행 시 성능 제한이 있을 수 있으니 참고하세요.
@@ -247,15 +247,15 @@ MetaSejong 플랫폼은 Docker로 배포되는 IsaacSim 시뮬레이션 응용�
 
 ### 1. 데모 애플리케이션 실행
 
-데모 애플리케이션은 로컬 컴퓨터에서 동작하는 MetaSejong 플랫폼에서 데모와 학습을 위해 생성되는 정답지를 활용하여 동작합니다. 정답지는 MetaSejong 플랫폼에서 경연 시나리오 정의에 따라 랜덤하게 생성되는 쓰레기들의 유형과 위치 정보를 제공합니다. 데모 애플리케이션은 참가자가 개발하여야 하는 객체 인식 기술 및 포즈 추정 기술 구현을 mockup 형태로 구현하였으며, mockup 구현에서 정답지를 활용하여 경연 프로토콜 구현 및 로봇 제어에 활용합니다.
+데모 애플리케이션은 로컬 컴퓨터에서 동작하는 Meta-Sejong 플랫폼에서 데모와 학습을 위해 생성되는 정답지를 활용하여 동작합니다. 정답지는 Meta-Sejong 플랫폼에서 경연 시나리오 정의에 따라 랜덤하게 생성되는 쓰레기들의 유형과 위치 정보를 제공합니다. 데모 애플리케이션은 참가자가 개발하여야 하는 객체 인식 기술 및 포즈 추정 기술 구현을 mockup 형태로 구현하였으며, mockup 구현에서 정답지를 활용하여 경연 프로토콜 구현 및 로봇 제어에 활용합니다.
 
 #### 1.1 정답지 파일 연결
-- **정답지 파일 경로**: `<MetaSejong 플랫폼 실행 경로>/scenario-data/answer-sheets/<scenario name>_answer_sheet.yaml`
+- **정답지 파일 경로**: `<Meta-Sejong 플랫폼 실행 경로>/scenario-data/answer-sheets/<scenario name>_answer_sheet.yaml`
 - **데모 애플리케이션 정답지 위치**: `<개발환경 프로젝트>/demo/demo_answer_sheet.yaml`
-- **주의사항**: 정답지는 MetaSejong 플랫폼을 실행하는 시점에 매번 새롭게 생성되므로, 파일을 복사하기보다는 심볼릭 링크를 설정하는 것을 권장합니다.
+- **주의사항**: 정답지는 Meta-Sejong 플랫폼을 실행하는 시점에 매번 새롭게 생성되므로, 파일을 복사하기보다는 심볼릭 링크를 설정하는 것을 권장합니다.
 
 #### 1.2 팀 정보 환경 설정
-경연 프로토콜에 따라 참가자 애플리케이션은 팀 ID와 인증 토큰, 지원하는 Stage 정보를 MetaSejong 플랫폼에 제시해야 합니다. 이러한 정보는 환경변수로 설정되어야 합니다.
+경연 프로토콜에 따라 참가자 애플리케이션은 팀 ID와 인증 토큰, 지원하는 Stage 정보를 Meta-Sejong 플랫폼에 제시해야 합니다. 이러한 정보는 환경변수로 설정되어야 합니다.
 
 ```yaml
 environment:

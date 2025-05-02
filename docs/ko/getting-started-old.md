@@ -2,9 +2,9 @@
 
 ## 소개
 
-MetaSejong AI Robotics Challenge 2025에 오신 것을 환영합니다! 본 대회는 IEEE MetaCom 2025의 부대행사이며, MetaCom 2025 Student Challenge Programs의 일환으로 진행됩니다. 메타버스와 AI 로보틱스 기술을 융합한 혁신적인 도전의 장을 제공합니다.
+MARC (Meta-Sejong AI Robotics Challenge) 2025에 오신 것을 환영합니다! 본 대회는 IEEE MetaCom 2025의 부대행사이며, MetaCom 2025 Student Challenge Programs의 일환으로 진행됩니다. 메타버스와 AI 로보틱스 기술을 융합한 혁신적인 도전의 장을 제공합니다.
 
-MetaSejong AI Robotics Challenge는 세종대학교를 모델로 한 메타버스 공간에서 진행됩니다. 참가 팀들은 이 가상 환경에서 Embodied AI 기술을 활용하여 주어진 과제를 해결하게 됩니다. 참가자들은 가상의 세종대학교 캠퍼스에서 로봇을 제어하고, 다양한 AI 기술을 적용하여 미션을 수행하게 됩니다.
+MARC (Meta-Sejong AI Robotics Challenge) 2025는 세종대학교를 모델로 한 메타버스 공간에서 진행됩니다. 참가 팀들은 이 가상 환경에서 Embodied AI 기술을 활용하여 주어진 과제를 해결하게 됩니다. 참가자들은 가상의 세종대학교 캠퍼스에서 로봇을 제어하고, 다양한 AI 기술을 적용하여 미션을 수행하게 됩니다.
 
 본 가이드는 개발 환경 구성부터 미션 수행까지의 전체 과정을 안내합니다. ROS2 표준 인터페이스를 통해 가상 환경과 상호작용하는 방법을 단계별로 상세히 설명하여, 참가자들이 원활하게 대회를 준비할 수 있도록 도와드립니다.
 
@@ -14,8 +14,8 @@ MetaSejong AI Robotics Challenge는 세종대학교를 모델로 한 메타버�
 
 대회 시스템은 다음과 같은 주요 구성 요소로 이루어져 있습니다:
 
-1. **MetaSejong 플랫폼**
-MetaSejong 플랫폼은 NVIDIA IsaacSim을 기반으로 구축된 세종대학교의 메타버스 가상 환경입니다. 다음과 같은 주요 기능을 제공합니다:
+1. **Meta-Sejong 플랫폼**
+Meta-Sejong 플랫폼은 NVIDIA IsaacSim을 기반으로 구축된 세종대학교의 메타버스 가상 환경입니다. 다음과 같은 주요 기능을 제공합니다:
 
     - 실시간 3D 가상 환경 시뮬레이션
     - 물리 엔진 기반의 정밀한 로봇 동작 시뮬레이션
@@ -35,17 +35,17 @@ MetaSejong 플랫폼은 NVIDIA IsaacSim을 기반으로 구축된 세종대학�
     - 환경 정보 접근
     - 미션 진행 상태 모니터링
 
-MetaSejong 플랫폼은 참가자들이 개발하는 AI Robotics 애플리케이션의 학습 환경으로 활용됩니다. 이를 통해 실제 로봇을 사용하지 않고도 다양한 시나리오를 테스트하고 최적화할 수 있습니다.
+Meta-Sejong 플랫폼은 참가자들이 개발하는 AI Robotics 애플리케이션의 학습 환경으로 활용됩니다. 이를 통해 실제 로봇을 사용하지 않고도 다양한 시나리오를 테스트하고 최적화할 수 있습니다.
 
 Docker를 사용하여 IsaacSim을 실행하고 메타버스로 구현된 세종대학교를 탐험해보세요. 이 프로젝트는 Docker Compose를 통해 실행할 수 있는 환경을 제공합니다. 다음 단계를 따라 설치를 진행하세요:
 
 ## 설치 방법
 
-### 1. MetaSejong 플랫폼 설치
+### 1. Meta-Sejong 플랫폼 설치
 
 #### 1.1 시스템 사전 요구사항 설정
 
-MetaSejong 플랫폼은 Docker로 배포되는 IsaacSim 시뮬레이션 응용프로그램으로, GUI를 포함하고 있습니다. GUI 애플리케이션을 Docker에서 실행하기 위해서는 X11 설정이 필요합니다.
+Meta-Sejong 플랫폼은 Docker로 배포되는 IsaacSim 시뮬레이션 응용프로그램으로, GUI를 포함하고 있습니다. GUI 애플리케이션을 Docker에서 실행하기 위해서는 X11 설정이 필요합니다.
 
 1. **X11 설정 확인**
    ```bash
@@ -59,7 +59,7 @@ MetaSejong 플랫폼은 Docker로 배포되는 IsaacSim 시뮬레이션 응용�
 
 1. **저장소 복제**
    ```bash
-   # MetaSejong 플랫폼 저장소 복제
+   # Meta-Sejong 플랫폼 저장소 복제
    git clone https://github.com/metasejong-competition/metacom2025-metasejong
    cd metacom2025-metasejong
    ```
@@ -95,7 +95,7 @@ MetaSejong 플랫폼은 Docker로 배포되는 IsaacSim 시뮬레이션 응용�
 
 2. **플랫폼 실행**
    ```bash
-   # MetaSejong 플랫폼 실행
+   # Meta-Sejong 플랫폼 실행
    make run
    ```
    - 실행 시 성능 제한이 있을 수 있으니 참고하세요.
