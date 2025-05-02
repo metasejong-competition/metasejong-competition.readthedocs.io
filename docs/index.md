@@ -1,6 +1,6 @@
 # MetaSejong Competition
 
-Welcome to the META-SEJONG AI Robotics Challenge 2025! This event is a sub-event of IEEE MetaCom 2025 and corresponds to the MetaCom 2025 Student Challenge Programs.
+Welcome to the MARC (Meta-Sejong AI Robotics Challenge) 2025! This event is a sub-event of IEEE MetaCom 2025 and corresponds to the MetaCom 2025 Student Challenge Programs.
 
 This guide provides guidelines for students participating in the challenge. Follow the guide to take on the challenge.
 

@@ -1,6 +1,6 @@
 # MetaSejong Competition
 
-Welcome to the META-SEJONG AI Robotics Challenge 2025! 
+Welcome to the MARC (Meta-Sejong AI Robotics Challenge) 2025! 
 
 challenge에 참여하는 학생들을 위한 가이드라인을 제공합니다. 가이드에 따라 도전해보세요.
 

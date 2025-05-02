@@ -57,8 +57,8 @@ sphinx-build -b html docs/ _build/html
 
 ## Submission Deadline
 
-- Regular submission: TBD
-- Late submission: TBD
+Paper Submission Deadline: 30 June 2025  (24:00 UTC)
+Code Submission Deadline: 30 June 2025  (24:00 UTC)
 
 ## Evaluation Criteria
 
