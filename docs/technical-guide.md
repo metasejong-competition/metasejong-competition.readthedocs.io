@@ -2,236 +2,255 @@
 
 ## Introduction
 
-This technical guide provides detailed information about the development environment setup, coding style, and implementation methods for the MARC (Meta-Sejong AI Robotics Challenge) 2025. It is designed to help participants understand the technical aspects of the competition and develop their solutions effectively.
+This technical guide provides detailed information about the development environment setup and demo application for the MARC (Meta-Sejong AI Robotics Challenge) 2025.
 
 ## Development Environment Setup
 
 ### 1. System Requirements
 
 #### 1.1 Hardware Requirements
-- **CPU**: Intel Core i7-8700K or AMD Ryzen 7 3700X or higher
-- **RAM**: 32GB or more
-- **GPU**: NVIDIA RTX 3080 or NVIDIA RTX A5000 or higher
-  - CUDA 11.7 or higher support
-  - Minimum 8GB VRAM
-- **Storage**: 100GB or more free space on SSD
-- **Network**: 1Gbps or higher network connection
+- **CPU**: Intel Core i5 or AMD Ryzen 5 or higher
+- **RAM**: 8GB or more
+- **GPU**: NVIDIA GPU (Optional, recommended for AI algorithm implementation)
+- **Storage**: 20GB or more free space
+- **Network**: 100Mbps or higher network connection
 
 #### 1.2 Software Requirements
 - **Operating System**: Ubuntu 22.04 LTS
 - **Python**: 3.10 or higher
+- **ROS2**: Humble Hawksbill
 - **Docker**: 20.10 or higher
 - **Docker Compose**: 2.0 or higher
-- **NVIDIA Driver**: 525.60.13 or higher
-- **CUDA**: 11.7 or higher
 
-### 2. Development Environment Setup
+### 2. Development Tools Installation
 
-#### 2.1 Docker Installation
-```bash
-# Install Docker
-sudo apt-get update
-sudo apt-get install docker.io docker-compose
+#### 2.1 Essential Development Tools
+- **Git**: Version control and collaboration
+  ```bash
+  sudo apt update
+  sudo apt install git
+  ```
+- **Docker**: Container-based development environment management
+  ```bash
+  # Install Docker
+  sudo apt install docker.io
+  sudo systemctl enable docker
+  sudo systemctl start docker
+  
+  # Install Docker Compose
+  sudo apt install docker-compose
+  ```
+- **ROS2**: Robot control system development
 
-# Add user to docker group
-sudo usermod -aG docker $USER
+[Optional] You can develop using the provided Dockerfile and docker-compose.yml files without installing ROS2
+  
+  ```bash
+  # Install ROS2 Humble
+  sudo apt install software-properties-common
+  sudo add-apt-repository universe
+  sudo apt update && sudo apt install curl
+  sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+  sudo apt update
+  sudo apt install ros-humble-desktop
+  ```
 
-# Verify installation
-docker --version
-docker-compose --version
+#### 2.2 Development Environment Setup
+- **Python Virtual Environment Setup**
+  ```bash
+  # Create Python virtual environment
+  python3 -m venv venv
+  source venv/bin/activate
+  
+  # Install required packages
+  pip install -r requirements.txt
+  ```
+- **ROS2 Workspace Setup**
+  ```bash
+  # Create ROS2 workspace
+  mkdir -p ~/metasejong_ws/src
+  cd ~/metasejong_ws
+  colcon build
+  ```
+
+## Demo Application
+
+### 1. Application Structure
+
+```
+.
+|   # Project guide documents
+├── README.md       
+|   # Docker related files
+├── Dockerfile      
+├── Dockerfile.dev
+├── docker-compose.yaml
+├── entrypoint.sh
+|   # Commands for development and score calculation
+├── Makefile
+|   # Participant application workspace (ROS2 Workspace)
+└── metasejong_competitor_ws
+    └── src
+        |   
+        └── airobotics_app
+            |   # ROS2 package definition and module dependencies
+            ├── package.xml
+            ├── requirements.txt
+            |   # Participant ROS Node implementation
+            ├── airobotics_node
+            │   ├── __init__.py
+            |   |   # ROS Node execution entry point
+            │   ├── airobotics_node.py
+            |   |   # Basic competition participant application template example implementation (abstract implementation)
+            │   ├── competition_task_base.py
+            |   |   # Basic competition participant application template example implementation
+            │   ├── competition_task_implementation.py
+            │   ├── competitor_request_message.py
+            |   |   # Utility function example implementation
+            │   ├── robot_node.py
+            │   ├── robot_util.py
+            │   └── world_coordinates_util.py
+            ├── resource
+            │   ├── airobotics_app
+            │   └── metasejong
+            ├── setup.cfg
+            └── setup.py
 ```
 
-#### 2.2 NVIDIA Container Toolkit Installation
-```bash
-# Add NVIDIA package repositories
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
-curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+### 2. Key Components Description
 
-# Install nvidia-docker2
-sudo apt-get update
-sudo apt-get install -y nvidia-docker2
-sudo systemctl restart docker
-```
+#### 2.1 ROS2 Nodes
+- **airobotics_node.py**: Main execution file
+  - Entry point for the competition application
+  - ROS2 node initialization and execution
+  - Message publishing/subscription setup
 
-#### 2.3 ROS2 Installation
-```bash
-# Set up sources
-sudo apt update && sudo apt install software-properties-common
-sudo add-apt-repository universe
-sudo apt update && sudo apt install curl
-sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+- **competition_task_base.py**: Abstract base class
+  - Basic interface definition for competition task implementation
+  - Required method declarations
+  - Common utility function provision
 
-# Add repository
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+- **competition_task_implementation.py**: Actual implementation class
+  - Specific implementation of competition tasks
+  - Object detection and pose estimation logic
+  - Robot control logic
 
-# Install ROS2
-sudo apt update
-sudo apt install ros-humble-desktop
-```
+#### 2.2 Utility Modules
+- **robot_node.py**: Robot control related functions
+  - Robot movement control
+  - Robot arm control
+  - Sensor data processing
 
-## Coding Style Guide
+- **robot_util.py**: Robot related utility functions
+  - Coordinate transformation
+  - Path planning
+  - Collision avoidance
 
-### 1. Python Coding Style
+- **world_coordinates_util.py**: World coordinate system related utilities
+  - Coordinate system transformation
+  - Position estimation
+  - Orientation calculation
 
-#### 1.1 General Rules
-- Follow PEP 8 style guide
-- Use 4 spaces for indentation
-- Maximum line length: 79 characters
-- Use meaningful variable and function names
-- Add docstrings for all public modules, functions, classes, and methods
+### 3. Development Guide
 
-#### 1.2 Code Organization
-```python
-# Import standard library
-import os
-import sys
+#### 3.1 Development Environment Setup
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/<your_team_account>/metasejong-airobotics
+   cd metasejong-airobotics
+   ```
 
-# Import third-party libraries
-import numpy as np
-import rospy2
+2. **Set Environment Variables**
+   ```bash
+   export ENV_METASEJONG_TEAM_NAME="your_team_name"
+   export ENV_METASEJONG_TEAM_TOKEN="your_team_token"
+   export ENV_METASEJONG_TEAM_TARGET_STAGE="your_target_stage"
+   ```
 
-# Import local modules
-from . import utils
-from . import config
-```
+3. **Build Docker Image**
+   ```bash
+   make build-dev
+   ```
 
-#### 1.3 Documentation
-```python
-def process_image(image: np.ndarray) -> np.ndarray:
-    """
-    Process the input image for object detection.
-    
-    Args:
-        image (np.ndarray): Input image in BGR format
-        
-    Returns:
-        np.ndarray: Processed image in RGB format
-    """
-    # Implementation
-    pass
-```
+#### 3.2 Development and Testing
 
-### 2. ROS2 Node Implementation
+1. **Demo Application Operation Flow**
 
-#### 2.1 Node Structure
-```python
-import rclpy
-from rclpy.node import Node
+![Demo Application Operation Flow](./_static/images/task_and_evaluation_protocol.jpg)
 
-class CompetitionNode(Node):
-    def __init__(self):
-        super().__init__('competition_node')
-        # Initialize publishers and subscribers
-        self.publisher = self.create_publisher(
-            String, 'topic_name', 10)
-        self.subscription = self.create_subscription(
-            String, 'topic_name', self.callback, 10)
-        
-    def callback(self, msg):
-        # Process received message
-        pass
-```
+The demo application operation flow consists of the following stages:
 
-#### 2.2 Message Handling
-```python
-from std_msgs.msg import String
+##### 1.1 Participant Application Start Request
+- **Request Message**: COMPETITOR_APP_STARTED
+- **Required Information**:
+  - team ID: Participant team identifier
+  - authentication token: Authentication token
+  - target stage: Supported stage number
+- **Stage Goals**:
+  - Stage 1: Object detection and pose estimation
+  - Stage 2: Object collection and classification
 
-def process_message(self, msg: String) -> None:
-    """
-    Process incoming ROS2 message.
-    
-    Args:
-        msg (String): ROS2 message to process
-    """
-    try:
-        # Message processing logic
-        pass
-    except Exception as e:
-        self.get_logger().error(f'Error processing message: {str(e)}')
-```
+##### 1.2 Participant Task Preparation Stage
+- **Authentication Verification**:
+  - team ID and authentication token validation
+  - Participation qualification check
+- **Environment Configuration**:
+  - Virtual environment initialization
+  - Robot and sensor setup
+- **Data Streaming**:
+  - Virtual environment data transmission start
+  - ROS2 topic setup and activation
 
-## Implementation Guide
+##### 1.3 Start Response Reception
+- **Response Message**: COMPETITOR_APP_STARTED_RESPONSE
+- **Response Content**:
+  - session ID
+  - preparation status
+  - error message (if any)
+- **Next Steps**:
+  - Start main task after response confirmation
+  - Retry or problem resolution in case of errors
 
-### 1. Competition Protocol Implementation
+##### 1.4 Stage 1 Task
+- **Image Analysis**:
+  - Fixed camera image reception
+  - Object detection algorithm application
+  - Pose estimation execution
+- **Data Processing**:
+  - Object position calculation
+  - Orientation information extraction
+  - Confidence score calculation
 
-#### 1.1 Message Types
-- **COMPETITOR_APP_STARTED (101)**
-- **REPORT_STAGE1_COMPLETED (102)**
-- **REPORT_STAGE2_COMPLETED (103)**
+##### 1.5 Stage 1 Result Report and Evaluation
+- **Result Transmission**:
+  - REPORT_STAGE1_RESULT request
+  - Result data in JSON format
+  ```json
+  {
+      "msg": 102,
+      "session": <session id>,
+      "payload": {
+          "object_detections": [
+              {
+                  "class_name": "master_shelf_can",
+                  "position": [x, y, z],
+                  "orientation": [qx, qy, qz, qw],
+                  "confidence": 0.95
+              }
+          ]
+      }
+  }
+  ```
+- **Evaluation Criteria**:
+  - Object detection accuracy
+  - Position estimation precision
+  - Orientation estimation accuracy
 
-#### 1.2 Response Message Types
-- **COMPETITOR_APP_STARTED_RESPONSE (201)**
-- **REPORT_STAGE1_COMPLETED_RESPONSE (202)**
-- **REPORT_STAGE2_COMPLETED_RESPONSE (203)**
-
-#### 1.3 Notification Message Types
-- **TIME_CONSTRAINT_EXPIRED (301)**
-- **COMPETITOR_REQUEST_ERROR (302)**
-
-### 2. Robot Control Implementation
-
-#### 2.1 Movement Control
-```python
-def move_robot(self, x: float, y: float, theta: float) -> None:
-    """
-    Move robot to specified position.
-    
-    Args:
-        x (float): Target x coordinate
-        y (float): Target y coordinate
-        theta (float): Target orientation
-    """
-    # Implementation
-    pass
-```
-
-#### 2.2 Arm Control
-```python
-def control_arm(self, joint_positions: List[float]) -> None:
-    """
-    Control robot arm joints.
-    
-    Args:
-        joint_positions (List[float]): Target joint positions
-    """
-    # Implementation
-    pass
-```
-
-### 3. Object Detection Implementation
-
-#### 3.1 Image Processing
-```python
-def process_image(self, image: np.ndarray) -> List[Dict]:
-    """
-    Process image for object detection.
-    
-    Args:
-        image (np.ndarray): Input image
-        
-    Returns:
-        List[Dict]: List of detected objects with positions
-    """
-    # Implementation
-    pass
-```
-
-#### 3.2 Pose Estimation
-```python
-def estimate_pose(self, object_detection: Dict) -> Dict:
-    """
-    Estimate object pose.
-    
-    Args:
-        object_detection (Dict): Object detection result
-        
-    Returns:
-        Dict: Estimated pose information
-    """
-    # Implementation
-    pass
-```
+##### 1.6 Stage 2 Task
+- **Robot Control**:
+  - Robot movement control
+  - Robot arm control
+  - Sensor data processing
 
 ## Testing and Debugging
 
