@@ -6,6 +6,8 @@ This document provides detailed information about the ROS2 interface for the MAR
 
 ## ROS2 Topic List
 
+The following is a list of all ROS2 topics provided by the Meta-Sejong platform:
+
 | Topic Name | Message Type | Publish/Subscribe | Description |
 |------------|--------------|-------------------|-------------|
 | `/metasejong2025/camera/image_raw` | `sensor_msgs/Image` | Subscribe | Raw camera image data |

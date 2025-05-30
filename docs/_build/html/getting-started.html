@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Getting Started Guide &mdash; MetaSejong Competition 1.0.0 documentation</title>
+  <title>Getting Started Guide &mdash; MARC(Meta-Sejong AI Robotics Challenge) 2025 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -23,7 +23,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Technical Guide" href="technical-guide.html" />
-    <link rel="prev" title="MetaSejong Competition" href="index.html" /> 
+    <link rel="prev" title="MARC (Meta-Sejong AI Robotics Challenge) 2025" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -35,7 +35,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            MetaSejong Competition
+            MARC(Meta-Sejong AI Robotics Challenge) 2025
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -49,14 +49,59 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#system-architecture">System Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#metasejong">MetaSejong (메타버스 서비스 플랫폼)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">경진대회 참가자 개발환경</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hardware-requirements">1. Hardware Requirements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#meta-sejong-platform-execution-environment">Meta-Sejong Platform Execution Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#participant-development-environment">Participant Development Environment</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#meta-sejong-platform">Meta-Sejong platform</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#demo-application">경진대회 참가자를 위한 Demo application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#software-requirements">2. Software Requirements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#meta-sejong-platform">Meta-Sejong Platform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Participant Development Environment</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#development-tools-and-knowledge-requirements">3. Development Tools and Knowledge Requirements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#required-development-tools">Required Development Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#required-knowledge">Required Knowledge</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#competition-participation-requirements">4. Competition Participation Requirements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#required-information">Required Information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submission-requirements">Submission Requirements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-method">Installation Method</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#meta-sejong-platform-installation">1. Meta-Sejong Platform Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#system-prerequisites-setup">1.1 System Prerequisites Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#competition-repository-clone">1.2 Competition Repository Clone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#docker-image-download">1.3 Docker Image Download</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#platform-execution">1.4 Platform Execution</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#participant-development-environment-setup">2. Participant Development Environment Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#preparation">2.1 Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#development-environment-repository-setup">2.2 Development Environment Repository Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#environment-variable-setup">2.3 Environment Variable Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#execution">2.4 Execution</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submission">3. Submission</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submission-preparation">3.1 Submission Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">3.2 Submission Requirements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#demo-application">Demo Application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#demo-application-execution">1. Demo Application Execution</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#answer-sheet-file-connection">1.1 Answer Sheet File Connection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#team-information-environment-setup">1.2 Team Information Environment Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#demo-application-operation-flow">2. Demo Application Operation Flow</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a></li>
@@ -64,7 +109,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="technical-guide.html">Technical Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="submit-guide.html">Submission Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rules.html">Competition Rules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-reference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
 </ul>
@@ -75,7 +119,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">MetaSejong Competition</a>
+          <a href="index.html">MARC(Meta-Sejong AI Robotics Challenge) 2025</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -97,303 +141,472 @@
 <h1>Getting Started Guide<a class="headerlink" href="#getting-started-guide" title="Link to this heading"></a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
-<p>Welcome to the META-SEJONG AI Robotics Challenge 2025! 이 행사는 IEEE MetaCom 2025 행사의 부대행사로서 MetaCom 2025 Student challenge programs에 해당합니다.</p>
-<p>META-Sejong AI Robotics Challenge는 도전적인 학생들이 팀을 이루어 Embodied AI 기술들을 마음껏 활용할 수 있도록 제공되는 세종대학교를 모델로한 메타버스 공간을 제공합니다.</p>
-<p>다음 가이드에 따라 개발환경을 구성하고, ROS2 표준 인터페이스를 통해 가상환경과 소통하면서 주어진 임무를 완수해보세요.</p>
+<p>Welcome to the MARC(Meta-Sejong AI Robotics Challenge) 2025! This competition is a co-located event of IEEE MetaCom 2025 and part of the MetaCom 2025 Student Challenge Programs. It provides an innovative platform that combines metaverse and AI robotics technologies.</p>
+<p>The MARC(Meta-Sejong AI Robotics Challenge) 2025 takes place in a metaverse space modeled after Sejong University. Participating teams will solve given tasks using Embodied AI technology in this virtual environment. Participants will control robots in the virtual Sejong University campus and perform missions by applying various AI technologies.</p>
+<p>This guide provides step-by-step instructions for the entire process, from setting up the development environment to mission execution. It details how to interact with the virtual environment through the ROS2 standard interface, helping participants prepare smoothly for the competition.</p>
+</section>
+<section id="system-architecture">
+<h2>System Architecture<a class="headerlink" href="#system-architecture" title="Link to this heading"></a></h2>
+<p><img alt="Competition Development Environment" src="_images/interface_architecture.jpg" /></p>
+<p>The competition system consists of the following main components:</p>
+<ol class="arabic simple">
+<li><p><strong>Meta-Sejong Platform</strong>
+The Meta-Sejong Platform is a metaverse virtual environment of Sejong University built on NVIDIA IsaacSim. It provides the following key features:</p>
+<ul class="simple">
+<li><p>Real-time 3D virtual environment simulation</p></li>
+<li><p>Physics engine-based precise robot motion simulation</p></li>
+<li><p>Various sensor data streaming</p></li>
+<li><p>Real-time robot control interface</p></li>
+</ul>
+</li>
+<li><p><strong>Participant Development Environment</strong></p>
+<ul class="simple">
+<li><p>ROS2-based application development environment</p></li>
+<li><p>AI algorithm implementation and testing environment</p></li>
+<li><p>Docker container-based independent development space</p></li>
+</ul>
+</li>
+<li><p><strong>Communication Interface</strong>
+The API required for participants to perform missions is provided through the ROS2 interface. Detailed API documentation is available in a separate document, including the following main features:</p>
+<ul class="simple">
+<li><p>Robot control interface</p></li>
+<li><p>Sensor data collection</p></li>
+<li><p>Environment information access</p></li>
+<li><p>Mission progress monitoring</p></li>
+</ul>
+</li>
+</ol>
+<p>The Meta-Sejong Platform serves as a learning environment for the AI Robotics applications developed by participants. This allows testing and optimization of various scenarios without using actual robots.</p>
 </section>
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
-<p>Before you begin, make sure you have:</p>
-<section id="metasejong">
-<h3>MetaSejong (메타버스 서비스 플랫폼)<a class="headerlink" href="#metasejong" title="Link to this heading"></a></h3>
+<p>To participate in the Meta-Sejong Platform, you must meet the following requirements. Each requirement is essential for competition participation and development:
+For detailed information about the prerequisites, please refer to the <a class="reference internal" href="technical-guide.html"><span class="std std-doc">Technical Guide</span></a>.</p>
+<section id="hardware-requirements">
+<h3>1. Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Link to this heading"></a></h3>
+<section id="meta-sejong-platform-execution-environment">
+<h4>Meta-Sejong Platform Execution Environment<a class="headerlink" href="#meta-sejong-platform-execution-environment" title="Link to this heading"></a></h4>
 <ul class="simple">
-<li><p>Python 3.10 or higher installed</p></li>
-<li><p>Git installed</p></li>
-<li><p>Basic understanding of Python programming</p></li>
-<li><p>Familiarity with ROS2</p></li>
-<li><p>Familiarity with NVidia IsaacSim 4.0.2</p></li>
-<li><p>Docker and Docker composer</p></li>
+<li><p><strong>CPU</strong>: Intel Core i7-8700K or AMD Ryzen 7 3700X or higher</p></li>
+<li><p><strong>RAM</strong>: 32GB or more</p></li>
+<li><p><strong>GPU</strong>: NVIDIA RTX 3080 or NVIDIA RTX A5000 or higher</p>
+<ul>
+<li><p>CUDA 11.7 or higher support</p></li>
+<li><p>Minimum 8GB VRAM</p></li>
+</ul>
+</li>
+<li><p><strong>Storage</strong>: 100GB or more free space on SSD</p></li>
+<li><p><strong>Network</strong>: 1Gbps or higher network connection</p></li>
+</ul>
+</section>
+<section id="participant-development-environment">
+<h4>Participant Development Environment<a class="headerlink" href="#participant-development-environment" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>CPU</strong>: Intel Core i5 or AMD Ryzen 5 or higher</p></li>
+<li><p><strong>RAM</strong>: 8GB or more</p></li>
+<li><p><strong>GPU</strong>: NVIDIA GPU (optional, recommended for AI algorithm implementation)</p></li>
+<li><p><strong>Storage</strong>: 20GB or more free space</p></li>
+<li><p><strong>Network</strong>: 100Mbps or higher network connection</p></li>
+</ul>
+</section>
+</section>
+<section id="software-requirements">
+<h3>2. Software Requirements<a class="headerlink" href="#software-requirements" title="Link to this heading"></a></h3>
+<section id="meta-sejong-platform">
+<h4>Meta-Sejong Platform<a class="headerlink" href="#meta-sejong-platform" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Operating System</strong>: Ubuntu 22.04 LTS</p></li>
+<li><p><strong>Python</strong>: 3.10 or higher</p></li>
+<li><p><strong>Docker</strong>: 20.10 or higher</p></li>
+<li><p><strong>Docker Compose</strong>: 2.0 or higher</p></li>
+<li><p><strong>NVIDIA Driver</strong>: 525.60.13 or higher</p></li>
+<li><p><strong>CUDA</strong>: 11.7 or higher</p></li>
 </ul>
 </section>
 <section id="id1">
-<h3>경진대회 참가자 개발환경<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<h4>Participant Development Environment<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
 <ul class="simple">
-<li><p>Python 3.10 or higher installed</p></li>
-<li><p>Git installed</p></li>
-<li><p>Basic understanding of Python programming</p></li>
-<li><p>Familiarity with ROS2</p></li>
-<li><p>Docker and Docker composer</p></li>
+<li><p><strong>Operating System</strong>: Ubuntu 22.04 LTS</p></li>
+<li><p><strong>Python</strong>: 3.10 or higher</p></li>
+<li><p><strong>ROS2</strong>: Humble Hawksbill</p></li>
+<li><p><strong>Docker</strong>: 20.10 or higher</p></li>
+<li><p><strong>Docker Compose</strong>: 2.0 or higher</p></li>
 </ul>
 </section>
 </section>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
-<section id="meta-sejong-platform">
-<h3>Meta-Sejong platform<a class="headerlink" href="#meta-sejong-platform" title="Link to this heading"></a></h3>
-<p>Meta-Sejong platform은 NVidia IsaacSim을 이용하여 구축된 세종대학교 메타버스 가상환경입니다.  더불어 경진대회에서 참가가자 임무를 수행하는데 필요한 API를 제공합니다.
-제공되는 API에 대한 상세 내용은 별도 페이지에서 설명합니다.</p>
-<p>Meta-Sejong platform은 참가자가 개발하는 AI Robotics application을 훈련하는데 있어 카운터파트 역할을 수행합니다.</p>
-<p>다음 절차에 따라 docker 기반으로 isaacsim을 구동하고, 메타버스로 구현된 세종대학교를 확인하세요.
-이 프로젝트는 docker-compose를 통해 구동할 수 있는 환경을 제공합니다.</p>
-<ol class="arabic simple">
-<li><p>Clone the competition repository:</p></li>
+<section id="development-tools-and-knowledge-requirements">
+<h3>3. Development Tools and Knowledge Requirements<a class="headerlink" href="#development-tools-and-knowledge-requirements" title="Link to this heading"></a></h3>
+<section id="required-development-tools">
+<h4>Required Development Tools<a class="headerlink" href="#required-development-tools" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Git</strong>: Version control and collaboration</p></li>
+<li><p><strong>Docker</strong>: Container-based development environment management</p></li>
+<li><p><strong>ROS2</strong>: Robot control system development</p></li>
+<li><p><strong>Python IDE</strong>: Code writing and debugging</p></li>
+</ul>
+</section>
+<section id="required-knowledge">
+<h4>Required Knowledge<a class="headerlink" href="#required-knowledge" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Python Programming</strong>: Algorithm implementation and debugging</p></li>
+<li><p><strong>ROS2 Basic Concepts</strong>: Topics, services, actions, etc.</p></li>
+<li><p><strong>Docker Basic Usage</strong>: Image building and container execution</p></li>
+<li><p><strong>Basic AI/ML Knowledge</strong>: Object detection, pose estimation, etc.</p></li>
+</ul>
+</section>
+</section>
+<section id="competition-participation-requirements">
+<h3>4. Competition Participation Requirements<a class="headerlink" href="#competition-participation-requirements" title="Link to this heading"></a></h3>
+<section id="required-information">
+<h4>Required Information<a class="headerlink" href="#required-information" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Team Information</strong>: Team name, team member information</p></li>
+<li><p><strong>Application Form</strong>: Form provided by the competition organizers</p></li>
+<li><p><strong>Team ID</strong>: Issued after application approval</p></li>
+<li><p><strong>Authentication Token</strong>: Issued after application approval</p></li>
+</ul>
+</section>
+<section id="submission-requirements">
+<h4>Submission Requirements<a class="headerlink" href="#submission-requirements" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>GitHub Repository</strong>: Private repository recommended</p></li>
+<li><p><strong>Code Submission</strong>: Final code in main/master branch</p></li>
+<li><p><strong>Documentation</strong>: HOWTORUN.md file included</p></li>
+<li><p><strong>Execution Method</strong>: Must be executable with make up-prod command</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="installation-method">
+<h2>Installation Method<a class="headerlink" href="#installation-method" title="Link to this heading"></a></h2>
+<section id="meta-sejong-platform-installation">
+<h3>1. Meta-Sejong Platform Installation<a class="headerlink" href="#meta-sejong-platform-installation" title="Link to this heading"></a></h3>
+<section id="system-prerequisites-setup">
+<h4>1.1 System Prerequisites Setup<a class="headerlink" href="#system-prerequisites-setup" title="Link to this heading"></a></h4>
+<p>The Meta-Sejong Platform is an IsaacSim simulation application distributed via Docker, including a GUI. X11 setup is required to run GUI applications in Docker.</p>
+<ol class="arabic">
+<li><p><strong>X11 Setup Verification</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check X11 setup</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$DISPLAY</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Output should be in the format <code class="docutils literal notranslate"><span class="pre">:1</span></code> or <code class="docutils literal notranslate"><span class="pre">localhost:1</span></code></p></li>
+<li><p>If X11 is not set up, refer to <a class="reference external" href="https://wiki.ubuntu.com/X/Architecture">Ubuntu X Architecture</a> for setup instructions</p></li>
+</ul>
+</li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/metasejong-competition/metacom2025-metasejong
+</section>
+<section id="competition-repository-clone">
+<h4>1.2 Competition Repository Clone<a class="headerlink" href="#competition-repository-clone" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p><strong>Repository Clone</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone Meta-Sejong Platform repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/metasejong-competition/metacom2025-metasejong
 <span class="nb">cd</span><span class="w"> </span>metacom2025-metasejong
 </pre></div>
 </div>
-<p>이 리포지토리는 경진대회용 어플리케이션을 개발하기 위한 일종의 환경을 제공합니다. fork할 필요는 없습니다.</p>
-<ol class="arabic simple" start="2">
-<li><p>Docker image load
-git으로 다운로드 받은 파일들은 docker image tar파일, docker-compose.yml, Makefile로 구성되어 있습니다.</p></li>
+</li>
+<li><p><strong>Repository Structure</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code>: Environment configuration file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Makefile</span></code>: Build and execution commands</p></li>
+<li><p>Example code and documentation</p></li>
+</ul>
+</li>
 </ol>
-<p>docker 명령을 직접 입력하거나 Makefile을 통해 제공되는 명령을 통해 수행할 수 있습니다.</p>
-<p>2.1. docker 명령을 사용하는 경우</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">git</span> <span class="n">clone</span> <span class="n">folder</span><span class="o">&gt;</span>
-<span class="n">docker</span> <span class="n">load</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="n">image_name</span><span class="o">&gt;.</span><span class="n">tar</span>
-</pre></div>
-</div>
-<p>2.2. Makefile 명령을 사용하는 경우</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">load</span><span class="o">-</span><span class="n">image</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>실행</p></li>
-</ol>
-<p>3.1 docker 명령을 사용하는 경우</p>
-<p>Using docker compose</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>up
-</pre></div>
-</div>
-<p>3.2. Makefile을 사용하는 경우</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>run
-</pre></div>
-</div>
 </section>
-<section id="demo-application">
-<h3>경진대회 참가자를 위한 Demo application<a class="headerlink" href="#demo-application" title="Link to this heading"></a></h3>
-<p>경진대회 참가자를 위한 demo application은 metasejong 플랫폼에서 제공하는 데이터의 활용과, 플랫폼 상에서 운용되는 로봇 제어를 위한 예제 코드를 제공한다.</p>
-<p>어플리케이션은 ROS2 어플리케이션 패키지 형태를 하고 있으며, 경연 진행 절차에 대한 참가자 응용프로그램과 metasejong 플랫폼 간의 메시지 교환을 포함하고 있기 때문에 참가자는 주의깊게 분석해보고 요구되는 절차를 따라야 한다.</p>
-<p>경진대회 참가자는 다음과 같은 절차를 따라야 한다.</p>
+<section id="docker-image-download">
+<h4>1.3 Docker Image Download<a class="headerlink" href="#docker-image-download" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p><strong>Image Download</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download via Makefile</span>
+make<span class="w"> </span>download
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Or direct download: <a class="reference external" href="https://drive.google.com/file/d/1fWGCelUpPuHxYX9ECWaa8SxL5NXOrL72/view?usp=drive_link">metasejong-metacom2025-with-playground-r06.tar</a></p></li>
+<li><p>Do not change the downloaded filename</p></li>
+</ul>
+</li>
+<li><p><strong>Docker Image Load</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load downloaded image</span>
+make<span class="w"> </span>load
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="platform-execution">
+<h4>1.4 Platform Execution<a class="headerlink" href="#platform-execution" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p><strong>X11 Activation</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Activate X11 (run once)</span>
+make<span class="w"> </span>setup
+</pre></div>
+</div>
+</li>
+<li><p><strong>Platform Execution</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Execute Meta-Sejong Platform</span>
+make<span class="w"> </span>run
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Note that there may be performance limitations during execution</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="participant-development-environment-setup">
+<h3>2. Participant Development Environment Setup<a class="headerlink" href="#participant-development-environment-setup" title="Link to this heading"></a></h3>
+<section id="preparation">
+<h4>2.1 Preparation<a class="headerlink" href="#preparation" title="Link to this heading"></a></h4>
 <ol class="arabic simple">
-<li><p>참가 신청</p></li>
+<li><p><strong>Application</strong></p>
+<ul class="simple">
+<li><p>Submit application at <a class="reference external" href="https://metasejong-competition.github.io/">Application Submission</a></p></li>
+<li><p>Team ID and authentication token issued after application review</p></li>
+<li><p>Team information received via email with confirmation message</p></li>
+</ul>
+</li>
 </ol>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>참가자</p></th>
-<th class="head"><p></p></th>
-<th class="head"><p>주최측</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>참가신청서 제출</p></td>
-<td><p>–&gt;</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>&lt;–</p></td>
-<td><p>참가팀 ID와 인증 토큰 발급(email)</p></td>
-</tr>
-</tbody>
-</table>
-<ol class="arabic simple" start="2">
-<li><p>참가자용 데모 응용프로그램 확인</p></li>
-</ol>
-<p>주최측에서는 경진대회 참가자를 위한 demo application github repository를 제공합니다.</p>
-<p>참가자는 이 repository를 통해 제공되는 demo application을 통해 metasejong 플랫폼에서 제공하는 API와 데이터에 대한 명확한 활용 방법을 학습할 수 있을것입니다.</p>
-<p>참고로, 참가자들이 개발한 최종 결과물은 팀의 private github repository로 관리하면서 주최측 계정을 readonly collaborator로 등록할것을 요청받게 됩니다.  약한 권고사항으로 demo application repository를 fork하여 개발에 활용 후 제출하기를 바랍니다.</p>
-<p>demo application의 동작 흐름은 다음과 같습니다.</p>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>참가자</p></th>
-<th class="head"><p></p></th>
-<th class="head"><p>MetaSejong 플랫폼</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>COMPETITOR_APP_STARTED (팀 ID, 인증토큰)</p></td>
-<td><p>&gt;</p></td>
-<td><p>토큰 검증, 세션키 발급</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
-<td><p>MetaSejong 가상공간에 경연 시나리오 구성</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p></p></td>
-<td><p>시간제한 타이머 시작, 채점 시작</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>&lt;</p></td>
-<td><p>/metasejong2025/xxx 형식의 ROS Topic으로 가상공간 데이터 스트리밍</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p>&lt;</p></td>
-<td><p>COMPETITOR_APP_STARTED_RESPONSE(세션키)</p></td>
-</tr>
-<tr class="row-odd"><td><p>ROS 데이터 분석을 통한 LEVEL 1(object detection &amp; pose estimation)</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>REPORT_LEVEL1_RESULT(세션키, 분석결과)</p></td>
-<td><p>&gt;</p></td>
-<td><p>분설결과 채점</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>&lt;</p></td>
-<td><p>REPORT_LEVEL1_RESULT_RESPONSE</p></td>
-</tr>
-<tr class="row-even"><td><p>LEVEL 2 시작(최적경로 계산)</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>전체 최적경로 이동 명령 &amp; pick&amp;place 명령</p></td>
-<td><p>&gt;</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>프로그램 종료</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<p>이러한 동작이 구현된 demo application에 대한 가이드는 다음과 같다.</p>
-<p>2.1 Fork &amp; clone repository:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/metasejong-competition/metasejong-airobotics
+</section>
+<section id="development-environment-repository-setup">
+<h4>2.2 Development Environment Repository Setup<a class="headerlink" href="#development-environment-repository-setup" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p><strong>Repository Fork</strong></p>
+<ul class="simple">
+<li><p>Fork the <a class="reference external" href="https://github.com/metasejong-competition/metasejong-airobotics">Development Environment Repository</a></p></li>
+<li><p>Private repository recommended</p></li>
+</ul>
+</li>
+<li><p><strong>Repository Clone</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone development environment repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/&lt;your_team_account&gt;/metasejong-airobotics
 <span class="nb">cd</span><span class="w"> </span>metasejong-airobotics
 </pre></div>
 </div>
-<p>2.2 Project structure</p>
-<p>demo application은 아래와 같은 구조로 제공된다.
-demo application은 참가자가 반드시 수행해야 하는 절차를 demo 형태고 제공하기 때문에 동작 구조를 명확하게 파악해야 한다. 하지만, 반드시 이 코드를 사용할 필요는 없다.</p>
-<p>demo application에는 경진대회 참가자에게 요구하는 AI Robotics 기술들의 구현을 mockup 형태로 competition_task_implementation.py에 예시로서 구현하고 있다. 참가자들은 mockup으로 구현된 입출력 데이터 형태를 고려하여 최적의 알고리즘을 사용하거나 고안하여 구현해야 한다.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
-|   # 프로젝트 가이드 문서 
-├── README.md       
-|   # Dockerizing 관련 파일 
-├── Dockerfile      
-├── Dockerfile.dev
-├── docker-compose.yaml
-├── entrypoint.sh
-|   # 개발, 채정 등에 활용되는 명령 정의
-├── Makefile
-|   # 참가자 응용프로그램용 워크스페이스(ROS2 Workspace)
-└── metasejong_competitor_ws
-    └── src
-        |   
-        └── airobotics_app
-            |   #   ROS2 Package 정의와 module dependancy
-            ├── package.xml
-            ├── requirements.txt
-            |   #   참가자용 ROS Node 구현 
-            ├── airobotics_node
-            │   ├── __init__.py
-            |   |   #   ROS Node 실행 entry point 
-            │   ├── airobotics_node.py
-            |   |   #   경진대회 참가자 Application의 기본 동작 템플릿 구현 예시(Abstract implementation)
-            │   ├── competition_task_base.py
-            |   |   #   경진대회 참가자 Application의 기본 동작 템플릿 구현 예시
-            │   ├── competition_task_implementation.py
-            │   ├── competitor_request_message.py
-            |   |   #   Utility 기능 구현 예시
-            │   ├── robot_node.py
-            │   ├── robot_util.py
-            │   └── world_coordinates_util.py
-            ├── resource
-            │   ├── airobotics_app
-            │   └── metasejong
-            ├── setup.cfg
-            └── setup.py
-</pre></div>
-</div>
-<p>2.3 환경 구성
-데모용 어플리케이션에서는 다음과 같은 3개의 환경변수를 필수로 요구하고 있다.</p>
-<p>3개의 환경변수들은 참가신청서 제출 후 이메일을 통해 고지되는 팀 ID와 인증토큰 정보이다.
-그리고, 참가팀이 지원하느 최종 단계에 대한 정보이다</p>
-<ul class="simple">
-<li><p>1단계: Fixed camera 영상으로부터 object detection과 pose estimation</p></li>
-<li><p>2단계: detect된 object의 효율적인 수거를 위한 최적경로 분석 및 로봇팔 제어를 통한 재활용 쓰레기 수거</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 환경변수 설정 예시</span>
+</li>
+</ol>
+</section>
+<section id="environment-variable-setup">
+<h4>2.3 Environment Variable Setup<a class="headerlink" href="#environment-variable-setup" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p><strong>Required Environment Variables</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set environment variables</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ENV_METASEJONG_TEAM_NAME</span><span class="o">=</span><span class="s2">&quot;your_team_name&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ENV_METASEJONG_TEAM_TOKEN</span><span class="o">=</span><span class="s2">&quot;your_team_token&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">ENV_METASEJONG_TEAM_TARGET_LEVEL</span><span class="o">=</span><span class="s2">&quot;your_target_level&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ENV_METASEJONG_TEAM_TARGET_STAGE</span><span class="o">=</span><span class="s2">&quot;your_target_stage&quot;</span>
 
-<span class="c1"># 환경변수 영구 설정 (선택사항)</span>
+<span class="c1"># Permanent environment variable setup (optional)</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export ENV_METASEJONG_TEAM_NAME=\&quot;your_team_name\&quot;&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export ENV_METASEJONG_TEAM_TOKEN=\&quot;your_team_token\&quot;&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export ENV_METASEJONG_TEAM_TARGET_LEVEL=\&quot;your_target_level\&quot;&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-<span class="nb">source</span><span class="w"> </span>~/.bashrc
 </pre></div>
 </div>
-<p>demo용 어플리케이션 실행에 필요한 값은 다음과 같다.</p>
+</li>
+<li><p><strong>Demo Environment Variable Values</strong></p>
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>환경변수</p></th>
-<th class="head"><p>값</p></th>
+<tr class="row-odd"><th class="head"><p>Environment Variable</p></th>
+<th class="head"><p>Value</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>ENV_METASEJONG_TEAM_NAME</p></td>
-<td><p>team_passion_for_challenges</p></td>
+<td><p>demo_team</p></td>
 </tr>
 <tr class="row-odd"><td><p>ENV_METASEJONG_TEAM_TOKEN</p></td>
-<td><p>87cef2059293b764451516c5e632e8b5</p></td>
+<td><p>18471a11421511d3c3a9f56c53bc8d57</p></td>
 </tr>
-<tr class="row-even"><td><p>ENV_METASEJONG_TEAM_TARGET_LEVEL</p></td>
+<tr class="row-even"><td><p>ENV_METASEJONG_TEAM_TARGET_STAGE</p></td>
 <td><p>2</p></td>
 </tr>
 </tbody>
 </table>
-<p>2.3 빌드 및 실행</p>
-<p>프로젝트의 build와 실행은 make 명령을 통해 실행할 수 있다.</p>
-<p>사용할 수 있는 make 명령 목록은 다음과 같으며, 프로젝트의 README.md 파일에 보다 상세한 내용이 기술되어 있다.</p>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>명령</p></th>
-<th class="head"><p>설명</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>make build-dev</p></td>
-<td><p>개발용 Docker 이미지 빌드</p></td>
-</tr>
-<tr class="row-odd"><td><p>make build-prod</p></td>
-<td><p>배포용 Docker 이미지 빌드</p></td>
-</tr>
-<tr class="row-even"><td><p>make up-dev</p></td>
-<td><p>개발 환경 실행</p></td>
-</tr>
-<tr class="row-odd"><td><p>make up-prod</p></td>
-<td><p>배포 환경 실행</p></td>
-</tr>
-<tr class="row-even"><td><p>make down</p></td>
-<td><p>모든 컨테이너 중지</p></td>
-</tr>
-<tr class="row-odd"><td><p>make clean</p></td>
-<td><p>사용하지 않는 Docker 리소스 정리</p></td>
-</tr>
-<tr class="row-even"><td><p>make help</p></td>
-<td><p>도움말 표시</p></td>
-</tr>
-</tbody>
-</table>
-<p>2.4 제출</p>
-<p>앞서 언급된것과 같이 개발된 결과물은 github repository로 제출되어야 한다. 주최측에서는 참가신청서가 접수되면 이메일로 참가팀에 할당할 팀 ID와 인증토큰을 이메일로 회신한다.</p>
-<p>이 때, 제출에 대한 안내와 함께 주최측의 github 계정을 제시하게 된다.</p>
-<p>참가팀은 제출 기안이 만료되기 전에 개발한 결과물을 github repository에 push하고, 이메일에 포함된 주최측 github 계정을 reposotiry의 collaborator로 등록할것이 요구된다.</p>
-<p>조최측에서는 공유된 respository의 main (또는 master) 브렌치의 코드를 이용하여  제출된 결과물을 평가하게 된다.</p>
-<p>주최측에서는 github repository를 clone한 후 make run 명령만을 수행하여 결과물을 평가한다.</p>
-<p>참가자는 Makefile, Dockerfile, docker-compose.yml 파일을 팀이 개발한 프로젝트에 맞게 수정하여 주최측의 환경에서 실행될 수 있도록 준비해야 한다.</p>
-<p>특수한 설정이 필요하다면, 실행 방법을 HOWTORUN.md 파일을 만들어 최대한 상세히 설명해야 한다.</p>
+</li>
+</ol>
+</section>
+<section id="execution">
+<h4>2.4 Execution<a class="headerlink" href="#execution" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p><strong>Execution Command</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>run
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="submission">
+<h3>3. Submission<a class="headerlink" href="#submission" title="Link to this heading"></a></h3>
+<section id="submission-preparation">
+<h4>3.1 Submission Preparation<a class="headerlink" href="#submission-preparation" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p><strong>Code Organization</strong></p>
+<ul class="simple">
+<li><p>Push final code to ‘main’ or ‘master’ branch</p></li>
+<li><p>Document execution method (HOWTORUN.md)</p></li>
+</ul>
+</li>
+<li><p><strong>Repository Sharing</strong></p>
+<ul class="simple">
+<li><p>Register organizer’s GitHub account as collaborator</p></li>
+<li><p>Verify private repository settings</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id2">
+<h4>3.2 Submission Requirements<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p><strong>Required Files</strong></p>
+<ul class="simple">
+<li><p>Modified Makefile</p></li>
+<li><p>Modified Dockerfile</p></li>
+<li><p>Modified docker-compose.yml</p></li>
+<li><p>HOWTORUN.md (if needed)</p></li>
+</ul>
+</li>
+<li><p><strong>Execution Method</strong></p>
+<ul class="simple">
+<li><p>Must be executable with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">run</span></code> command</p></li>
+<li><p>Document any special settings in detail</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="demo-application">
+<h2>Demo Application<a class="headerlink" href="#demo-application" title="Link to this heading"></a></h2>
+<p>For detailed structure and development guide of the demo application, please refer to the <a class="reference internal" href="technical-guide.html"><span class="std std-doc">Technical Guide</span></a>.</p>
+<section id="demo-application-execution">
+<h3>1. Demo Application Execution<a class="headerlink" href="#demo-application-execution" title="Link to this heading"></a></h3>
+<p>The demo application operates using answer sheets generated by the Meta-Sejong Platform running on your local computer for demonstration and learning purposes. The answer sheets provide information about the types and locations of randomly generated trash objects based on the competition scenario definition. The demo application implements 물체 탐지 및 위치 추정 technologies that participants need to develop in a mockup form, utilizing the answer sheets for competition protocol implementation and robot control.</p>
+<section id="answer-sheet-file-connection">
+<h4>1.1 Answer Sheet File Connection<a class="headerlink" href="#answer-sheet-file-connection" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Answer Sheet File Path</strong>: <code class="docutils literal notranslate"><span class="pre">&lt;Meta-Sejong</span> <span class="pre">Platform</span> <span class="pre">execution</span> <span class="pre">path&gt;/scenario-data/answer-sheets/&lt;scenario</span> <span class="pre">name&gt;_answer_sheet.yaml</span></code></p></li>
+<li><p><strong>Demo Application Answer Sheet Location</strong>: <code class="docutils literal notranslate"><span class="pre">&lt;Development</span> <span class="pre">environment</span> <span class="pre">project&gt;/demo/demo_answer_sheet.yaml</span></code></p></li>
+<li><p><strong>Note</strong>: Since answer sheets are newly generated each time the Meta-Sejong Platform is executed, it is recommended to set up a symbolic link rather than copying the file.</p></li>
+</ul>
+</section>
+<section id="team-information-environment-setup">
+<h4>1.2 Team Information Environment Setup<a class="headerlink" href="#team-information-environment-setup" title="Link to this heading"></a></h4>
+<p>According to the competition protocol, the participant application must present team ID, authentication token, and supported Stage information to the Meta-Sejong Platform. This information must be set as environment variables.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ENV_METASEJONG_TEAM_NAME=team_passion_for_challenges</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ENV_METASEJONG_TEAM_TOKEN=87cef2059293b764451516c5e632e8b5</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ENV_METASEJONG_TEAM_TARGET_STAGE=2</span>
+</pre></div>
+</div>
+<p><strong>Note</strong>: When submitting competition results, you must modify this information with the values issued during the application process.</p>
+</section>
+</section>
+<section id="demo-application-operation-flow">
+<h3>2. Demo Application Operation Flow<a class="headerlink" href="#demo-application-operation-flow" title="Link to this heading"></a></h3>
+<p><img alt="Demo Application Operation Flow" src="_images/task_and_evaluation_protocol.jpg" /></p>
+<p>The above diagram shows the complete operation flow of the demo application. The main steps are as follows:</p>
+<ol class="arabic">
+<li><p><strong>Participant Application Start Request</strong></p>
+<ul class="simple">
+<li><p>Send COMPETITOR_APP_STARTED request</p></li>
+<li><p>Include team ID, authentication token, supported stage</p></li>
+<li><p>Stage 1: Object detection and pose estimation</p></li>
+<li><p>Stage 2: Object collection and classification</p></li>
+</ul>
+</li>
+<li><p><strong>Participant Work Preparation Phase</strong></p>
+<ul class="simple">
+<li><p>Platform verifies team ID and authentication token</p></li>
+<li><p>Competition environment configuration</p></li>
+<li><p>Virtual environment data streaming begins</p></li>
+<li><p>Data provision through ROS Topics begins</p></li>
+</ul>
+</li>
+<li><p><strong>Start Response Reception</strong></p>
+<ul class="simple">
+<li><p>Receive COMPETITOR_APP_STARTED_RESPONSE</p></li>
+<li><p>Confirm all preparations complete</p></li>
+<li><p>Begin actual competition work</p></li>
+</ul>
+</li>
+<li><p><strong>Stage 1 Work</strong></p>
+<ul class="simple">
+<li><p>Fixed camera image analysis</p></li>
+<li><p>Object detection and pose estimation</p></li>
+<li><p>Trash object location and orientation determination</p></li>
+</ul>
+</li>
+<li><p><strong>Stage 1 Result Report and Evaluation</strong></p>
+<ul class="simple">
+<li><p>Send REPORT_STAGE1_RESULT request</p></li>
+<li><p>Platform responds with evaluation results</p></li>
+<li><p>Analysis data format:</p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;msg&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;session&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;sessio</span><span class="kc">n</span><span class="w"> </span><span class="err">id&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;payload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;object_detections&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span><span class="nt">&quot;class_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;master_shelf_can&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;position&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">x</span><span class="p">,</span><span class="w"> </span><span class="err">y</span><span class="p">,</span><span class="w"> </span><span class="err">z</span><span class="p">]},</span>
+<span class="w">            </span><span class="err">...</span><span class="w"> </span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Score Calculation:
+Stage 1 score is calculated by comparing the ground truth stored in the Meta-Sejong Platform with the ‘object_detections’ field in the participant’s Stage 1 result submission. The evaluation assesses the accuracy of the detected object’s type and position. The final score is determined by the number of correctly recognized objects.</p></li>
+</ul>
+</li>
+<li><p><strong>Stage 2 Work</strong></p>
+<ul class="simple">
+<li><p>Actual work execution using robot</p></li>
+<li><p>Robot movement and arm control</p></li>
+<li><p>Trash collection and classification</p></li>
+</ul>
+</li>
+<li><p><strong>Robot Control Interface</strong></p>
+<ul class="simple">
+<li><p>Robot control command</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">/metasejong2025/robot/cmd_vel</span></code>: Robot movement command</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/metasejong2025/robot/ppcmd</span></code>: Robot arm control command</p></li>
+</ul>
+</li>
+<li><p>Robot position information</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">/metasejong2025/robot/odom</span></code>: Robot position(odometry) information</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/tf</span></code>: Coordinate transformation information</p></li>
+</ul>
+</li>
+<li><p>Map information</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">/metasejong2025/map</span></code>: Global occupancy map</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Stage 2 Work Evaluation</strong></p>
+<ul class="simple">
+<li><p>Real-time work execution evaluation</p></li>
+<li><p>Collection success and classification success evaluation</p></li>
+<li><p>Score calculation:
+<img alt="Stage 2 Score Calculation Formula" src="_images/math_formation_stage2_score.jpg" /></p></li>
+</ul>
+</li>
+</ol>
+<p>For detailed implementation methods and API usage for each step, please refer to the <a class="reference internal" href="technical-guide.html"><span class="std std-doc">Technical Guide</span></a>.</p>
 </section>
 </section>
 <section id="next-steps">
 <h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p>Read the <a class="reference internal" href="technical-guide.html"><span class="std std-doc">Technical Guide</span></a> for detailed technical information</p></li>
-<li><p>Review the <a class="reference internal" href="rules.html"><span class="std std-doc">Competition Rules</span></a></p></li>
-<li><p>Check the <a class="reference internal" href="submit-guide.html"><span class="std std-doc">Submission Guide</span></a> for submission instructions</p></li>
+<li><p>Read the <a class="reference internal" href="technical-guide.html"><span class="std std-doc">Technical Guide</span></a>: You can check detailed technical information.</p></li>
+<li><p>Check the <a class="reference internal" href="submit-guide.html"><span class="std std-doc">Submission Guide</span></a>: You can find guidance on how to submit your results.</p></li>
 </ul>
 </section>
 </section>
@@ -402,14 +615,14 @@ demo application은 참가자가 반드시 수행해야 하는 절차를 demo �
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="MetaSejong Competition" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="MARC (Meta-Sejong AI Robotics Challenge) 2025" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="technical-guide.html" class="btn btn-neutral float-right" title="Technical Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, MetaSejong.</p>
+    <p>&#169; Copyright 2024, IOTCOSS(IoT Convergence &amp; Open Sharing System).</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

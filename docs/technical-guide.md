@@ -174,7 +174,7 @@ This technical guide provides detailed information about the development environ
 
 #### 3.2 Development and Testing
 
-1. **Demo Application Operation Flow**
+  **Demo Application Operation Flow**
 
 ![Demo Application Operation Flow](./_static/images/task_and_evaluation_protocol.jpg)
 
@@ -233,86 +233,25 @@ The demo application operation flow consists of the following stages:
           "object_detections": [
               {
                   "class_name": "master_shelf_can",
-                  "position": [x, y, z],
-                  "orientation": [qx, qy, qz, qw],
-                  "confidence": 0.95
+                  "position": [x, y, z]
               }
           ]
       }
   }
   ```
 - **Evaluation Criteria**:
-  - Object detection accuracy
-  - Position estimation precision
-  - Orientation estimation accuracy
+  - Accuracy of object classification
+  - Precision of position estimation
 
 ##### 1.6 Stage 2 Task
 - **Robot Control**:
-  - Robot movement control
-  - Robot arm control
-  - Sensor data processing
-
-## Testing and Debugging
-
-### 1. Unit Testing
-```python
-import unittest
-
-class TestCompetitionNode(unittest.TestCase):
-    def setUp(self):
-        # Setup test environment
-        pass
-        
-    def test_object_detection(self):
-        # Test object detection
-        pass
-        
-    def test_robot_control(self):
-        # Test robot control
-        pass
-```
-
-### 2. ROS2 Testing
-```python
-import launch
-import launch_ros.actions
-
-def generate_test_description():
-    return launch.LaunchDescription([
-        launch_ros.actions.Node(
-            package='airobotics_app',
-            executable='competition_node',
-            name='test_node'
-        ),
-        # Add test nodes
-    ])
-```
-
-### 3. Debugging Tools
-- **rqt**: ROS visualization and debugging tools
-- **ros2 topic echo**: Monitor topic messages
-- **ros2 node info**: Get node information
-- **ros2 service call**: Call ROS services
-
-## Performance Optimization
-
-### 1. Code Optimization
-- Use efficient data structures
-- Minimize memory allocations
-- Optimize loops and conditionals
-- Use vectorized operations when possible
-
-### 2. ROS2 Optimization
-- Use appropriate QoS settings
-- Optimize message serialization
-- Minimize topic publishing frequency
-- Use efficient message types
-
-### 3. Resource Management
-- Monitor CPU and memory usage
-- Implement proper cleanup
-- Handle exceptions gracefully
-- Log important events
+  - Path planning and autonomous navigation
+  - Robotic arm control
+  - Gripper operation
+	
+- **Sorting recyclables**:
+  - Recyclable type recognition with accurate pose estimation
+  - Accurate sorting based on recyclability classification
 
 ## Next Steps
 

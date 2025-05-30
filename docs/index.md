@@ -24,6 +24,5 @@ faq
 
 ## Competition Rules
 
-- [Competition Rules](rules.md)
 - [API Reference](api-reference.md)
 - [FAQ](faq.md)
