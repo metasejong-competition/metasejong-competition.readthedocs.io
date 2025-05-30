@@ -8,16 +8,36 @@
 
 다음은 Meta-Sejong 플랫폼에서 제공하는 모든 ROS2 토픽 목록입니다:
 
-| 토픽 이름 | 메시지 타입 | 발행/구독 | 설명 |
-|----------|------------|----------|------|
-| /metasejong2025/camera/image_raw | sensor_msgs/Image | 발행 | RGB 카메라 이미지 |
-| /metasejong2025/camera/depth | sensor_msgs/Image | 발행 | 깊이 카메라 이미지 |
-| /metasejong2025/odom | nav_msgs/Odometry | 발행 | 로봇의 위치 및 자세 정보 |
-| /metasejong2025/tf | tf2_msgs/TFMessage | 발행 | 좌표계 변환 정보 |
-| /metasejong2025/cmd_vel | geometry_msgs/Twist | 구독 | 로봇 이동 명령 |
-| /metasejong2025/arm_control | metasejong_msgs/ArmControl | 구독 | 로봇 팔 제어 명령 |
-| /metasejong2025/object_info | metasejong_msgs/ObjectInfo | 발행 | 물체 정보 |
-| /metasejong2025/task_status | metasejong_msgs/TaskStatus | 발행 | 작업 상태 정보 |
+**Publish** means Meta-Sejong publish message throuth this topic to provide some information to competitor's application
+**Subscribe** means Meta-Sejong subscribe this topic to receive some message from competitor's application
+
+| Topic Name | Message Type | Publish/Subscribe | Description |
+|------------|--------------|-------------------|-------------|
+| /metasejong2025/competitor_request | std_msgs/msg/String |  Subscribe | Participants send competition-related requests to the Meta-Sejong Platform |
+| /metasejong2025/competitor_notification  | std_msgs/msg/String |  Publish | Response messages are sent in reply to the participant’s requests |
+| /metasejong2025/competitor_response | std_msgs/msg/String |  Publish | The platform delivers notification messages to the participant |
+<br />
+| /metasejong2025/cameras/*field_name*/camera_info | sensor_msgs/msg/CameraInfo | Publish | The camera’s installation position and orientation information |
+| /metasejong2025/cameras/*field_name*/image_raw | sensor_msgs/msg/Image | Publish | Streaming images from the camera |
+<br />
+| /metasejong2025/map | nav_msgs/msg/OccupancyGrid |  Publish | Map data for autonomous navigation provided via the ROS 2 Nav2 Map Server |
+<br />
+| /metasejong2025/robot/center_camera_depth |  sensor_msgs/msg/Image |  Publish | 로봇의 전면 중앙 부분에 설치된 RGB+Depth 카메라에서 촬영한 Depth 영상 스트림 |
+| /metasejong2025/robot/center_camera_image |  sensor_msgs/msg/Image |  Publish | 로봇의 전면 중앙 부분에 설치된 RGB+Depth  카메라에서 촬영한 RGB 영상 스트림 |
+| /metasejong2025/robot/center_camera_info |  sensor_msgs/msg/CameraInfo |  Publish | 로봇의 전면 중앙 부분에 설치된 RGB+Depth 카메라의 위치 및 방향 정보 |
+| /metasejong2025/robot/left_camera_image |  sensor_msgs/msg/Image |  Publish | 로봇의 전면 좌측 부분에 설치된 RGB+Depth  카메라에서 촬영한 RGB 영상 스트림 |
+| /metasejong2025/robot/left_camera_info |  sensor_msgs/msg/CameraInfo |  Publish | 로봇의 전면 좌측 부분에 설치된 RGB 카메라 에대한 카메라의 위치 및 방향 정보  |
+| /metasejong2025/robot/right_camera_image |  sensor_msgs/msg/Image |  Publish | 로봇의 전면 우측 부분에 설치된 RGB 카메라 에서 촬영한 RGB 영상 스트림 |
+| /metasejong2025/robot/right_camera_info |  sensor_msgs/msg/CameraInfo |  Publish | 로봇의 전면 우측 부분에 설치된 RGB+Depth  카메라에서 촬영한 RGB 영상 스트림 |
+| /metasejong2025/robot/scan |  sensor_msgs/msg/LaserScan |  Publish | 로봇에 탑재된 LiDAR 센서를 통해 수집된 센서 정보  |
+<br />
+| /metasejong2025/robot/cmd_vel |  geometry_msgs/msg/Twist |  Subscribe | 로봇 자율주행을 위한 이동 명령 전달|
+| /metasejong2025/robot/ppcmd |  std_msgs/msg/String |  Subscribe | 로봇에 탑재된 로봇팔 제어를 위한 명령 전달 |
+<br />
+| /metasejong2025/robot/odom |  nav_msgs/msg/Odometry |  Publish | 로봇 자율주행 시 로봇의 이동 경로 추적에 필요  |
+<br />
+| /tf |  tf2_msgs/msg/TFMessage |  Publish | Desc |
+| /tf_static |  tf2_msgs/msg/TFMessage |  Publish | Desc |
 
 ### 센서 데이터 토픽
 

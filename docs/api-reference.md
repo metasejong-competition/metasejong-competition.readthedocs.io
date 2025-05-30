@@ -8,271 +8,32 @@ This document provides detailed information about the ROS2 interface for the MAR
 
 The following is a list of all ROS2 topics provided by the Meta-Sejong platform:
 
+**Publish** means Meta-Sejong publish message throuth this topic to provide some information to competitor's application
+**Subscribe** means Meta-Sejong subscribe this topic to receive some message from competitor's application
+
 | Topic Name | Message Type | Publish/Subscribe | Description |
 |------------|--------------|-------------------|-------------|
-| `/metasejong2025/camera/image_raw` | `sensor_msgs/Image` | Subscribe | Raw camera image data |
-| `/metasejong2025/camera/depth` | `sensor_msgs/Image` | Subscribe | Depth image data |
-| `/metasejong2025/odom` | `nav_msgs/Odometry` | Subscribe | Robot odometry data |
-| `/metasejong2025/tf` | `tf2_msgs/TFMessage` | Subscribe | Robot transformation data |
-| `/metasejong2025/cmd_vel` | `geometry_msgs/Twist` | Publish | Robot velocity commands |
-| `/metasejong2025/arm_control` | `metasejong_msgs/ArmControl` | Publish | Robot arm control commands |
-| `/metasejong2025/object_info` | `metasejong_msgs/ObjectInfo` | Subscribe | Object detection information |
-| `/metasejong2025/task_status` | `metasejong_msgs/TaskStatus` | Subscribe | Task execution status |
+| /metasejong2025/competitor_request | std_msgs/msg/String |  Subscribe | Participants send competition-related requests to the Meta-Sejong Platform |
+| /metasejong2025/competitor_notification  | std_msgs/msg/String |  Publish | Response messages are sent in reply to the participant’s requests |
+| /metasejong2025/competitor_response | std_msgs/msg/String |  Publish | The platform delivers notification messages to the participant |
+<br />
+| /metasejong2025/cameras/*field_name*/camera_info | sensor_msgs/msg/CameraInfo | Publish | The camera’s installation position and orientation information |
+| /metasejong2025/cameras/*field_name*/image_raw | sensor_msgs/msg/Image | Publish | Streaming images from the camera |
+<br />
+| /metasejong2025/map | nav_msgs/msg/OccupancyGrid |  Publish | Map data for autonomous navigation provided via the ROS 2 Nav2 Map Server |
+<br />
+| /metasejong2025/robot/center_camera_depth | sensor_msgs/msg/Image | Publish | Depth video stream captured by the RGB+Depth camera mounted at the front center of the robot |
+| /metasejong2025/robot/center_camera_image | sensor_msgs/msg/Image | Publish | RGB video stream captured by the RGB+Depth camera mounted at the front center of the robot |
+| /metasejong2025/robot/center_camera_info | sensor_msgs/msg/CameraInfo | Publish | Position and orientation information of the RGB+Depth camera mounted at the front center of the robot |
+| /metasejong2025/robot/left_camera_image | sensor_msgs/msg/Image | Publish | RGB video stream captured by the RGB+Depth camera mounted at the front left of the robot |
+| /metasejong2025/robot/left_camera_info | sensor_msgs/msg/CameraInfo | Publish | Position and orientation information of the RGB camera mounted at the front left of the robot |
+| /metasejong2025/robot/right_camera_image | sensor_msgs/msg/Image | Publish | RGB video stream captured by the RGB camera mounted at the front right of the robot |
+| /metasejong2025/robot/right_camera_info | sensor_msgs/msg/CameraInfo | Publish | RGB video stream captured by the RGB+Depth camera mounted at the front right of the robot |
+| /metasejong2025/robot/scan | sensor_msgs/msg/LaserScan | Publish | Sensor data collected from the LiDAR sensor mounted on the robot |
+<br />
+| /metasejong2025/robot/cmd_vel | geometry_msgs/msg/Twist | Subscribe | Movement command for autonomous navigation of the robot |
+<br />
+| /metasejong2025/robot/ppcmd | std_msgs/msg/String | Subscribe | Command for controlling the robot arm mounted on the robot |
+| /metasejong2025/robot/odom | nav_msgs/msg/Odometry | Publish | Required for tracking the robot's movement path during autonomous navigation |
 
-### Topic Descriptions
 
-#### Camera Data Topics
-- **`/metasejong2025/camera/image_raw`**
-  ```json
-  {
-    "header": {
-      "stamp": {
-        "sec": 0,
-        "nanosec": 0
-      },
-      "frame_id": "camera"
-    },
-    "height": 480,
-    "width": 640,
-    "encoding": "rgb8",
-    "is_bigendian": 0,
-    "step": 1920,
-    "data": [0, 0, 0, ...]
-  }
-  ```
-
-- **`/metasejong2025/camera/depth`**
-  ```json
-  {
-    "header": {
-      "stamp": {
-        "sec": 0,
-        "nanosec": 0
-      },
-      "frame_id": "camera"
-    },
-    "height": 480,
-    "width": 640,
-    "encoding": "32FC1",
-    "is_bigendian": 0,
-    "step": 2560,
-    "data": [0.0, 0.0, 0.0, ...]
-  }
-  ```
-
-#### Robot State Topics
-- **`/metasejong2025/odom`**
-  ```json
-  {
-    "header": {
-      "stamp": {
-        "sec": 0,
-        "nanosec": 0
-      },
-      "frame_id": "odom"
-    },
-    "child_frame_id": "base_link",
-    "pose": {
-      "pose": {
-        "position": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "orientation": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0,
-          "w": 1.0
-        }
-      },
-      "covariance": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...]
-    },
-    "twist": {
-      "twist": {
-        "linear": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "angular": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        }
-      },
-      "covariance": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...]
-    }
-  }
-  ```
-
-#### Control Command Topics
-- **`/metasejong2025/cmd_vel`**
-  ```json
-  {
-    "linear": {
-      "x": 0.0,
-      "y": 0.0,
-      "z": 0.0
-    },
-    "angular": {
-      "x": 0.0,
-      "y": 0.0,
-      "z": 0.0
-    }
-  }
-  ```
-
-- **`/metasejong2025/arm_control`**
-  ```json
-  {
-    "joint_positions": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-    "gripper_position": 0.0
-  }
-  ```
-
-#### Object Information Topics
-- **`/metasejong2025/object_info`**
-  ```json
-  {
-    "header": {
-      "stamp": {
-        "sec": 0,
-        "nanosec": 0
-      },
-      "frame_id": "camera"
-    },
-    "objects": [
-      {
-        "id": 1,
-        "class": "object_class",
-        "position": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "orientation": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0,
-          "w": 1.0
-        },
-        "confidence": 0.0
-      }
-    ]
-  }
-  ```
-
-#### Task Status Topics
-- **`/metasejong2025/task_status`**
-  ```json
-  {
-    "header": {
-      "stamp": {
-        "sec": 0,
-        "nanosec": 0
-      },
-      "frame_id": "task"
-    },
-    "task_id": 1,
-    "status": "RUNNING",
-    "progress": 0.0,
-    "message": "Task in progress"
-  }
-  ```
-
-## Implementation Example
-
-### Basic ROS2 Node Implementation
-```python
-import rclpy
-from rclpy.node import Node
-from sensor_msgs.msg import Image
-from geometry_msgs.msg import Twist
-from metasejong_msgs.msg import ArmControl
-
-class CompetitionNode(Node):
-    def __init__(self):
-        super().__init__('competition_node')
-        
-        # Create subscribers
-        self.image_sub = self.create_subscription(
-            Image,
-            '/metasejong2025/camera/image_raw',
-            self.image_callback,
-            10)
-            
-        self.depth_sub = self.create_subscription(
-            Image,
-            '/metasejong2025/camera/depth',
-            self.depth_callback,
-            10)
-            
-        # Create publishers
-        self.cmd_vel_pub = self.create_publisher(
-            Twist,
-            '/metasejong2025/cmd_vel',
-            10)
-            
-        self.arm_control_pub = self.create_publisher(
-            ArmControl,
-            '/metasejong2025/arm_control',
-            10)
-            
-    def image_callback(self, msg):
-        # Process image data
-        pass
-        
-    def depth_callback(self, msg):
-        # Process depth data
-        pass
-        
-    def move_robot(self, linear_x, angular_z):
-        msg = Twist()
-        msg.linear.x = linear_x
-        msg.angular.z = angular_z
-        self.cmd_vel_pub.publish(msg)
-        
-    def control_arm(self, joint_positions, gripper_position):
-        msg = ArmControl()
-        msg.joint_positions = joint_positions
-        msg.gripper_position = gripper_position
-        self.arm_control_pub.publish(msg)
-
-def main():
-    rclpy.init()
-    node = CompetitionNode()
-    rclpy.spin(node)
-    node.destroy_node()
-    rclpy.shutdown()
-
-if __name__ == '__main__':
-    main()
-```
-
-## Important Notes
-
-### Message Frequency
-- Camera topics: 30Hz
-- Odometry topic: 100Hz
-- Control command topics: 50Hz
-- Object information topic: 10Hz
-- Task status topic: 1Hz
-
-### Error Handling
-- Implement proper error handling for all callbacks
-- Log errors using ROS2 logging system
-- Handle message deserialization errors
-- Implement timeout mechanisms for critical operations
-
-### Performance Considerations
-- Minimize message processing time
-- Use efficient data structures
-- Implement proper cleanup
-- Monitor system resources
-
-### Debugging
-- Use ROS2 logging for debugging
-- Monitor topic messages using `ros2 topic echo`
-- Check node information using `ros2 node info`
-- Use visualization tools for debugging

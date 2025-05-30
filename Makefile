@@ -20,7 +20,7 @@ build:
 # 로컬 서버 실행
 serve:
 	@echo "Starting local server at http://localhost:$(SERVER_PORT)"
-	@cd $(HTML_DIR) && $(PYTHON) -m http.server $(SERVER_PORT)
+	@cd docs/$(HTML_DIR) && $(PYTHON) -m http.server $(SERVER_PORT)
 
 # 빌드 후 서버 실행
 dev: build serve
