@@ -11,7 +11,6 @@ This guide provides guidelines for students participating in the challenge. Foll
 getting-started
 technical-guide
 submit-guide
-rules
 api-reference
 faq
 ```

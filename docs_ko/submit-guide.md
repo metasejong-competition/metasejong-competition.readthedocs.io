@@ -30,9 +30,10 @@ HOWTORUN.md에는 다음 내용이 포함되어야 합니다:
 - 환경 설정 방법
 - 문제 해결 가이드
 
-## 제출 마감일
+## Submission Deadline
 
-- 정규 제출: June 16, 2025 (Submission deadline at 24:00 UTC)
+- Paper Submission Deadline: 30 June 2025  (24:00 UTC)
+- Code Submission Deadline: 30 June 2025  (24:00 UTC)
 
 ## 주의사항
 

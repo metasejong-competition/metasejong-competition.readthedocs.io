@@ -2,68 +2,54 @@
 
 ## Submission Process
 
-1. Prepare your submission
-2. Test your code locally
-3. Submit through the competition platform
+### 1. Submission Preparation
+
+- Set up the development environment and implement the code
+- Prepare all required files (e.g., Makefile, Dockerfile, etc.)
+- Complete project documentation
+
+### 2. Submission via GitHub
+
+- Push the final version of the code to your GitHub repository before the submission deadline
+- Add the organizer’s GitHub account as a collaborator to the repository. The organizer’s GitHub account will be announced via email at a later time.
 
 ## Submission Requirements
 
-### Code Requirements
+### Required Files
 
-- All code must be in Python
-- Follow PEP 8 style guide
-- Include proper documentation
-- Pass all tests
+- Makefile: Defines build and execution commands
+- Dockerfile: Container image configuration
+- docker-compose.yml: Service orchestration and dependency management
+- HOWTORUN.md: Includes team information, execution instructions, and setup guide
 
-### File Structure
+### Documentation Requirements
 
-Your submission should include:
+The HOWTORUN.md file must include the following:
 
-```
-submission/
-├── src/
-│   └── your_solution.py
-├── requirements.txt
-├── README.md
-└── tests/
-    └── test_solution.py
-```
-
-### Documentation
-
-Your README.md should include:
-
-- Project description
+- Team name
 - Installation instructions
 - Usage examples
-- Dependencies
-
-## Testing Before Submission
-
-1. Run the test suite:
-```bash
-python -m pytest tests/
-```
-
-2. Check code style:
-```bash
-flake8 src/
-```
-
-3. Verify documentation:
-```bash
-sphinx-build -b html docs/ _build/html
-```
+- List of dependencies
+- Environment setup guide
+- Troubleshooting instructions
 
 ## Submission Deadline
 
 - Paper Submission Deadline: 30 June 2025  (24:00 UTC)
 - Code Submission Deadline: 30 June 2025  (24:00 UTC)
 
-## Evaluation Criteria
+## Important Notes
+   
 
-- Code quality
-- Documentation
-- Test coverage
-- Performance
-- Innovation
+   ### 1. Repository Management
+
+   - Push the final code to the main or master branch
+   - Ensure the repository is set to private
+   - Add the organizer’s GitHub account as a collaborator
+   - Note: Any code updates after the deadline may not be considered in the evaluation
+
+   ### 2. Execution Instructions
+
+   - The application must be executable using the make run command
+   - If special configurations are required, document them in detail
+   - All dependencies must be listed in requirements.txt
