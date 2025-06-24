@@ -11,7 +11,7 @@
 ### 2. Submission via GitHub
 
 - Push the final version of the code to your GitHub repository before the submission deadline
-- Add the organizer’s GitHub account as a collaborator to the repository. The organizer’s GitHub account will be announced via email at a later time.
+- Add the organizer's GitHub account as a collaborator to the repository. The organizer's GitHub account will be announced via email at a later time.
 
 ## Submission Requirements
 
@@ -35,8 +35,8 @@ The HOWTORUN.md file must include the following:
 
 ## Submission Deadline
 
-- Paper Submission Deadline: 30 June 2025  (24:00 UTC)
-- Code Submission Deadline: 30 June 2025  (24:00 UTC)
+- Paper Submission Deadline: **8 July 2025 (24:00 UTC)** <s style="color: red;">30 June 2025 (24:00 UTC)</s>
+- Code Submission Deadline: **8 July 2025 (24:00 UTC)** <s style="color: red;">30 June 2025 (24:00 UTC)</s>
 
 ## Important Notes
    
@@ -45,7 +45,7 @@ The HOWTORUN.md file must include the following:
 
    - Push the final code to the main or master branch
    - Ensure the repository is set to private
-   - Add the organizer’s GitHub account as a collaborator
+   - Add the organizer's GitHub account as a collaborator
    - Note: Any code updates after the deadline may not be considered in the evaluation
 
    ### 2. Execution Instructions

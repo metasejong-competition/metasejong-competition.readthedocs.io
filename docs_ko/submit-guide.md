@@ -32,8 +32,8 @@ HOWTORUN.md에는 다음 내용이 포함되어야 합니다:
 
 ## Submission Deadline
 
-- Paper Submission Deadline: 30 June 2025  (24:00 UTC)
-- Code Submission Deadline: 30 June 2025  (24:00 UTC)
+- Paper Submission Deadline: **8 July 2025 (24:00 UTC)** ~~30 June 2025 (24:00 UTC)~~ 
+- Code Submission Deadline: **8 July 2025 (24:00 UTC)** ~~30 June 2025 (24:00 UTC)~~ 
 
 ## 주의사항
 
