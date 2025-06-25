@@ -114,8 +114,7 @@
                 │   ├── competitor_request_message.py
                 |   |   # Utility function example implementation
                 │   ├── robot_node.py
-                │   ├── robot_util.py
-                │   └── world_coordinates_util.py
+                │   └── robot_util.py
                 ├── resource
                 │   ├── airobotics_app
                 │   └── metasejong
@@ -157,12 +156,6 @@
       - Coordinate transformation
       - Path planning
       - Collision avoidance
-
-    - **world_coordinates_util.py**: World coordinate system related utilities
-    
-      - Coordinate system transformation
-      - Position estimation
-      - Orientation calculation
 
 
   ### Development Guide

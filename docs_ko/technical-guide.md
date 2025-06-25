@@ -108,8 +108,7 @@
             │   ├── competitor_request_message.py
             |   |   # 유틸리티 함수 예제 구현
             │   ├── robot_node.py
-            │   ├── robot_util.py
-            │   └── world_coordinates_util.py
+            │   └── robot_util.py
             ├── resource
             │   ├── airobotics_app
             │   └── metasejong
@@ -146,10 +145,6 @@
   - 경로 계획
   - 충돌 회피
 
-- **world_coordinates_util.py**: 월드 좌표계 관련 유틸리티
-  - 좌표계 변환
-  - 위치 추정
-  - 방향 계산
 
 ### 3. Development Guide
 
